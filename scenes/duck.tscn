@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://bbouae4l6v8xj"]
+
+[ext_resource type="Script" uid="uid://x3oek4fmlp8b" path="res://scripts/duck.gd" id="1_ql0qm"]
+[ext_resource type="Texture2D" uid="uid://dqapro32x00j3" path="res://assets/duck base.png" id="2_ccrsp"]
+[ext_resource type="Texture2D" uid="uid://bry8i18ajcs6u" path="res://assets/duck quack.png" id="3_dll6g"]
+[ext_resource type="AudioStream" uid="uid://cjytyud4hu27i" path="res://assets/sounds/fakeduck2.mp3" id="4_kls7j"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ojlhk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ccrsp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_dll6g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_dll6g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_dll6g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ccrsp")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Duck" type="Control" unique_id=1072704950]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -380.5
+offset_top = -357.0
+offset_right = 369.0
+offset_bottom = 379.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ql0qm")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2060236632]
+stream = ExtResource("4_kls7j")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=260985856]
+layout_mode = 1
+offset_left = 50.5
+offset_top = 41.5
+offset_right = 747.5
+offset_bottom = 761.5
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TextureButton" unique_id=1026300317]
+position = Vector2(347.5, 400.5)
+sprite_frames = SubResource("SpriteFrames_ojlhk")
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_button_pressed"]
