@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://du2ic1ec2epc3"]
+
+[ext_resource type="Texture2D" uid="uid://d0bbe2l5qjxn5" path="res://assets/grandma_duck_button.png" id="1_5h8yo"]
+[ext_resource type="Script" uid="uid://cxu1bc580v8ha" path="res://templates/upgrade_menu.gd" id="1_46jkk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_s1fef"]
+font_size = 24
+
+[node name="UpgradeMenu" type="Control" unique_id=1722700651]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 981.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_46jkk")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1853021500]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -271.0
+offset_top = 18.0
+offset_right = -15.0
+offset_bottom = -17.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=276177451]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer" unique_id=1480893023]
+layout_mode = 2
+text = "Shop"
+label_settings = SubResource("LabelSettings_s1fef")
+horizontal_alignment = 1
+
+[node name="DummyOption1" type="TextureButton" parent="ScrollContainer/VBoxContainer" unique_id=1405372144]
+layout_mode = 2
+texture_normal = ExtResource("1_5h8yo")
+
+[node name="DummyOption2" type="TextureButton" parent="ScrollContainer/VBoxContainer" unique_id=1989481167]
+layout_mode = 2
+texture_normal = ExtResource("1_5h8yo")
+
+[node name="DummyOption3" type="TextureButton" parent="ScrollContainer/VBoxContainer" unique_id=528925457]
+layout_mode = 2
+texture_normal = ExtResource("1_5h8yo")
