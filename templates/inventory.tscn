@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://d2rchbowi0u1l"]
+
+[ext_resource type="Texture2D" uid="uid://dqudxg38gtwve" path="res://assets/inventory_icons/grandma_duck.png" id="1_2frq5"]
+[ext_resource type="Texture2D" uid="uid://cu0cetjs1bwk6" path="res://assets/inventory_icons/scissors.png" id="2_a2pyj"]
+
+[node name="Inventory" type="Control" unique_id=595575020]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 427.0
+offset_top = 337.0
+offset_right = -358.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ItemList" type="ItemList" parent="." unique_id=395173772]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="ItemList" unique_id=2067845648]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.12900001
+anchor_bottom = 0.16700001
+offset_right = -23.855003
+offset_bottom = -23.961002
+texture = ExtResource("1_2frq5")
+
+[node name="TextureRect2" type="TextureRect" parent="ItemList" unique_id=1740230339]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.12900001
+anchor_bottom = 0.16700001
+offset_right = -23.855003
+offset_bottom = -23.961002
+texture = ExtResource("2_a2pyj")

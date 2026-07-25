@@ -75,10 +75,9 @@ upgrade_id = "grandma-duck"
 button_text = "Grandma Duck"
 cost = 10
 
-[node name="Duck" parent="UI Elements/Base Clicker Game" unique_id=1072704950 instance=ExtResource("4_b7bsw")]
-layout_mode = 1
-offset_left = -195.5
-offset_top = -203.5
-offset_right = 195.5
-offset_bottom = 203.5
-scale = Vector2(0.5, 0.5)
+[node name="DuckFiller" type="ColorRect" parent="UI Elements/Base Clicker Game" unique_id=361248136]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 151.0
+offset_right = 767.0
+offset_bottom = 377.0
