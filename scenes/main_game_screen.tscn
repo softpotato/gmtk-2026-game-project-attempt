@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://cakpmwk1j1gr2" path="res://scripts/score_render.gd" id="1_mrvve"]
 [ext_resource type="PackedScene" uid="uid://bw0u6ewol2n7f" path="res://templates/feather.tscn" id="2_oey37"]
 [ext_resource type="PackedScene" uid="uid://du2ic1ec2epc3" path="res://templates/upgrade_menu.tscn" id="3_oey37"]
-[ext_resource type="PackedScene" uid="uid://bbouae4l6v8xj" path="res://scenes/duck.tscn" id="4_b7bsw"]
 [ext_resource type="PackedScene" uid="uid://ch53hg0nmlim1" path="res://templates/upgrades/upgrade_button.tscn" id="4_b7bsw"]
 [ext_resource type="PackedScene" uid="uid://hnt7p3ewe7od" path="res://templates/upgrades/linear_upgrade_button.tscn" id="4_u5j62"]
 
@@ -44,15 +43,7 @@ offset_bottom = 820.0
 
 [node name="UpgradeMenu" parent="UI Elements/Base Clicker Game" unique_id=1722700651 node_paths=PackedStringArray("locked_upgrades") instance=ExtResource("3_oey37")]
 layout_mode = 1
-
-[node name="Duck" parent="UI Elements/Base Clicker Game" unique_id=1072704950 instance=ExtResource("4_b7bsw")]
-layout_mode = 1
-offset_left = -195.5
-offset_top = -203.5
-offset_right = 195.5
-offset_bottom = 203.5
-scale = Vector2(0.5, 0.5)
-locked_upgrades = [NodePath("UpgradeOptions/BuyGun"), NodePath("UpgradeOptions/BuyGrandmaDuck"), NodePath("UpgradeOptions/AscentionBook")]
+locked_upgrades = [NodePath("UpgradeOptions/AscentionBook"), NodePath("UpgradeOptions/BuyGun"), NodePath("UpgradeOptions/BuyGrandmaDuck")]
 
 [node name="UpgradeOptions" type="Control" parent="UI Elements/Base Clicker Game/UpgradeMenu" unique_id=1710829293]
 visible = false
@@ -83,3 +74,11 @@ parent_reference = NodePath("../..")
 upgrade_id = "grandma-duck"
 button_text = "Grandma Duck"
 cost = 10
+
+[node name="Duck" parent="UI Elements/Base Clicker Game" unique_id=1072704950 instance=ExtResource("4_b7bsw")]
+layout_mode = 1
+offset_left = -195.5
+offset_top = -203.5
+offset_right = 195.5
+offset_bottom = 203.5
+scale = Vector2(0.5, 0.5)
