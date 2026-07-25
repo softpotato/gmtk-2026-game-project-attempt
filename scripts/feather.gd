@@ -1,4 +1,4 @@
-extends Area2D
+extends Control
 
-func _on_texture_button_pressed() -> void:
+func _on_button_pressed() -> void:
 	GameCounter.add_score(1)

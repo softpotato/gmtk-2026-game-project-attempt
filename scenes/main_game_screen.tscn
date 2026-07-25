@@ -1,29 +1,43 @@
 [gd_scene format=3 uid="uid://dchfk0ib6xtxf"]
 
-[ext_resource type="Texture2D" uid="uid://cdegqecdjwxqm" path="res://assets/background.png" id="1_idtfc"]
 [ext_resource type="Script" uid="uid://cakpmwk1j1gr2" path="res://scripts/score_render.gd" id="1_mrvve"]
 [ext_resource type="PackedScene" uid="uid://bw0u6ewol2n7f" path="res://templates/feather.tscn" id="2_oey37"]
+[ext_resource type="PackedScene" uid="uid://du2ic1ec2epc3" path="res://templates/upgrade_menu.tscn" id="3_oey37"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_s1fef"]
+font_size = 48
 
 [node name="Main Scene" type="Node2D" unique_id=2032188786]
 
-[node name="Background" type="Sprite2D" parent="." unique_id=1050318929]
-position = Vector2(640, 360)
-texture = ExtResource("1_idtfc")
-metadata/_edit_lock_ = true
+[node name="UI Elements" type="CanvasLayer" parent="." unique_id=997321275]
 
-[node name="Feather" parent="." unique_id=299275338 instance=ExtResource("2_oey37")]
-position = Vector2(121, 285)
-scale = Vector2(0.5, 0.5)
+[node name="Base Clicker Game" type="Control" parent="UI Elements" unique_id=144380927]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1812584683]
-
-[node name="NumberCounter" type="Label" parent="CanvasLayer" unique_id=1829715544]
-anchors_preset = -1
-anchor_right = 0.031000001
-anchor_bottom = 0.032
-offset_left = 285.0
-offset_top = 43.0
-offset_right = 1032.32
-offset_bottom = 93.96
+[node name="NumberCounter" type="Label" parent="UI Elements/Base Clicker Game" unique_id=1829715544]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.0
+offset_right = 250.0
+offset_bottom = 97.0
+grow_horizontal = 2
+label_settings = SubResource("LabelSettings_s1fef")
 horizontal_alignment = 1
 script = ExtResource("1_mrvve")
+
+[node name="Feather" parent="UI Elements/Base Clicker Game" unique_id=299275338 instance=ExtResource("2_oey37")]
+layout_mode = 1
+offset_left = 100.0
+offset_top = 100.0
+offset_right = 100.0
+offset_bottom = 820.0
+
+[node name="UpgradeMenu" parent="UI Elements/Base Clicker Game" unique_id=1722700651 instance=ExtResource("3_oey37")]
+layout_mode = 1

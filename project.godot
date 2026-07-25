@@ -18,14 +18,16 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameCounter="*uid://bmv4cn8jg1ebo"
+GeneratorUpgrades="*uid://difen62354t4e"
 SceneLoader="*uid://4iwvjiopv2f1"
 
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
-window/stretch/mode="canvas_items"
+window/stretch/mode="viewport"
 window/stretch/aspect="expand"
+window/stretch/scale_mode="integer"
 
 [editor]
 
@@ -41,3 +43,4 @@ version_control/autoload_on_startup=true
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.40392157, 0.49411765, 0.38039216, 1)
