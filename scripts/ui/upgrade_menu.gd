@@ -42,12 +42,12 @@ func remove_upgrade(buttonToRemove: UpgradeButton) -> void:
 
 # This callback method is primarily for registering the next upgrade once
 # the previous one is selected
-func register_next_unlocked_upgrade(upgrade: UpgradeUtils.Upgrade):
+func register_next_unlocked_upgrade(upgrade: UpgradeButton):
 	unlocked_upgrades.append(upgrade)
 	_sort_unlocked_upgrades()
 	
 func _sort_unlocked_upgrades() -> void:
 	unlocked_upgrades.sort_custom(_custom_upgrade_sort)
 	
-func _custom_upgrade_sort(a: UpgradeUtils.Upgrade, b: UpgradeUtils.Upgrade):
+func _custom_upgrade_sort(a: UpgradeButton, b: UpgradeButton):
 	return a.cost < b.cost
