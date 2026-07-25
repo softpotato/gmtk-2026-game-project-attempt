@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://du2ic1ec2epc3"]
 
-[ext_resource type="Texture2D" uid="uid://d0bbe2l5qjxn5" path="res://assets/grandma_duck_button.png" id="1_5h8yo"]
+[ext_resource type="Texture2D" uid="uid://d0bbe2l5qjxn5" path="res://assets/button_base.png" id="1_5h8yo"]
 [ext_resource type="Script" uid="uid://cxu1bc580v8ha" path="res://templates/upgrade_menu.gd" id="1_46jkk"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_s1fef"]

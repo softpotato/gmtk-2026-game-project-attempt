@@ -1,5 +1,11 @@
 [gd_scene format=3 uid="uid://i17v80uet5ue"]
 
+[ext_resource type="Script" uid="uid://cvvd8s4hd8qi" path="res://templates/upgrades/grandma_duck_button.gd" id="1_a1reo"]
+[ext_resource type="Texture2D" uid="uid://d0bbe2l5qjxn5" path="res://assets/button_base.png" id="2_epe3e"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_46jkk"]
+font_color = Color(0.3635184, 0.18816546, 0.18230435, 1)
+
 [node name="GrandmaDuckButton" type="Control" unique_id=929680627]
 layout_mode = 3
 anchors_preset = 8
@@ -9,8 +15,21 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_a1reo")
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=834265193]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+texture_normal = ExtResource("2_epe3e")
+
+[node name="Text" type="Label" parent="TextureButton" unique_id=1189413530]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 4.0
+offset_right = 189.0
+offset_bottom = 27.0
+text = "Grandma Duck"
+label_settings = SubResource("LabelSettings_46jkk")
+horizontal_alignment = 1
+vertical_alignment = 1
