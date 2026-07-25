@@ -42,5 +42,19 @@ horizontal_alignment = 1
 
 [node name="LinearUpgradeButton" parent="ScrollContainer/VBoxContainer" unique_id=929680627 instance=ExtResource("2_46jkk")]
 layout_mode = 2
-generator_string = "grandma-duck"
+generator_id = "grandma-duck"
 button_text = "Buy Grandma Duck"
+initial_reveal_threshold = 10
+
+[node name="LinearUpgradeButton2" parent="ScrollContainer/VBoxContainer" unique_id=1853818320 instance=ExtResource("2_46jkk")]
+layout_mode = 2
+generator_id = "slave-duck"
+button_text = "Buy Slave Duck"
+
+[node name="LinearUpgradeButton3" parent="ScrollContainer/VBoxContainer" unique_id=1543332327 instance=ExtResource("2_46jkk")]
+layout_mode = 2
+generator_id = "orphan-duck"
+button_text = "Buy Orphan Duck"
+initial_reveal_threshold = 50
+current_cost = 50
+increment_per_upgrade = 25
