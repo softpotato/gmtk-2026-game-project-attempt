@@ -1,7 +1,5 @@
 [gd_scene format=3 uid="uid://d2rchbowi0u1l"]
 
-[ext_resource type="PackedScene" uid="uid://jjgcqfuwpn3h" path="res://templates/inventory/item.tscn" id="1_ckcsb"]
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qsuaf"]
 bg_color = Color(0.5072252, 0.160936, 0.1634649, 1)
 border_blend = true
@@ -60,12 +58,4 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Item2" parent="Panel/MarginContainer/Panel/GridContainer" unique_id=1721695053 instance=ExtResource("1_ckcsb")]
-layout_mode = 2
-
-[node name="Item" parent="Panel/MarginContainer/Panel/GridContainer" unique_id=1678799179 instance=ExtResource("1_ckcsb")]
-layout_mode = 2
-
-[node name="Item3" parent="Panel/MarginContainer/Panel/GridContainer" unique_id=1476184582 instance=ExtResource("1_ckcsb")]
-layout_mode = 2
+columns = 5
