@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://du2ic1ec2epc3" path="res://templates/upgrade_menu.tscn" id="3_oey37"]
 [ext_resource type="PackedScene" uid="uid://ch53hg0nmlim1" path="res://templates/upgrades/upgrade_button.tscn" id="4_b7bsw"]
 [ext_resource type="PackedScene" uid="uid://hnt7p3ewe7od" path="res://templates/upgrades/linear_upgrade_button.tscn" id="4_u5j62"]
+[ext_resource type="PackedScene" uid="uid://bbouae4l6v8xj" path="res://scenes/duck.tscn" id="6_rai2x"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_s1fef"]
 font_size = 48
@@ -75,10 +76,10 @@ upgrade_id = "grandma-duck"
 button_text = "Grandma Duck"
 cost = 10
 
-[node name="Duck" parent="UI Elements/Base Clicker Game" unique_id=1072704950 instance=ExtResource("4_b7bsw")]
+[node name="Duck" parent="UI Elements/Base Clicker Game" unique_id=1072704950 instance=ExtResource("6_rai2x")]
 layout_mode = 1
-offset_left = -195.5
-offset_top = -203.5
-offset_right = 195.5
-offset_bottom = 203.5
+offset_left = -187.375
+offset_top = -184.125
+offset_right = 187.375
+offset_bottom = 184.125
 scale = Vector2(0.5, 0.5)
