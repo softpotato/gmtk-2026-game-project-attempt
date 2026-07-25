@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://du2ic1ec2epc3"]
 
-[ext_resource type="Script" uid="uid://cxu1bc580v8ha" path="res://templates/upgrade_menu.gd" id="1_46jkk"]
-[ext_resource type="PackedScene" uid="uid://i17v80uet5ue" path="res://templates/upgrades/grandma_duck_button.tscn" id="2_46jkk"]
+[ext_resource type="Script" uid="uid://cxu1bc580v8ha" path="res://scripts/ui/upgrade_menu.gd" id="1_46jkk"]
+[ext_resource type="PackedScene" uid="uid://hnt7p3ewe7od" path="res://templates/upgrades/linear_upgrade_button.tscn" id="2_46jkk"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_s1fef"]
 font_size = 24
@@ -40,5 +40,7 @@ text = "Shop"
 label_settings = SubResource("LabelSettings_s1fef")
 horizontal_alignment = 1
 
-[node name="GrandmaDuckButton" parent="ScrollContainer/VBoxContainer" unique_id=929680627 instance=ExtResource("2_46jkk")]
+[node name="LinearUpgradeButton" parent="ScrollContainer/VBoxContainer" unique_id=929680627 instance=ExtResource("2_46jkk")]
 layout_mode = 2
+generator_string = "grandma-duck"
+button_text = "Buy Grandma Duck"

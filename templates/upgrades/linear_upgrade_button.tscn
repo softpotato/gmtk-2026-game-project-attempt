@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://hnt7p3ewe7od"]
 
-[ext_resource type="Script" uid="uid://cvvd8s4hd8qi" path="res://templates/upgrades/grandma_duck_button.gd" id="1_vspth"]
+[ext_resource type="Script" uid="uid://dsh7j0i47fthg" path="res://scripts/ui/linear_upgrade_button.gd" id="1_vspth"]
 [ext_resource type="Texture2D" uid="uid://d0bbe2l5qjxn5" path="res://assets/button_base.png" id="2_gogkk"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_46jkk"]
@@ -25,11 +25,10 @@ texture_normal = ExtResource("2_gogkk")
 
 [node name="Text" type="Label" parent="TextureButton" unique_id=1189413530]
 layout_mode = 0
-offset_left = 57.0
+offset_left = 3.0
 offset_top = 4.0
-offset_right = 207.0
+offset_right = 252.0
 offset_bottom = 27.0
-text = "Buy Grandma Duck"
 label_settings = SubResource("LabelSettings_46jkk")
 horizontal_alignment = 1
 vertical_alignment = 1

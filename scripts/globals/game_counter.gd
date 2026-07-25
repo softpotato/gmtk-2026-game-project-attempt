@@ -13,6 +13,10 @@ func add_score(amount: int):
 	
 	emit_signal("score_changed", score, totalFeathersAccumulated)
 
+func subtract_score(amount: int):
+	score -= amount
+	emit_signal("score_changed", score, totalFeathersAccumulated)
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# TODO: Load in state from file
