@@ -11,11 +11,11 @@ const format_string: String = "Buy %s for %s"
 
 func _ready() -> void:
 	GameCounter.score_changed.connect(_on_feather_change)
-	recalculate_text()
-	_on_feather_change(GameCounter.score, GameCounter.totalFeathersAccumulated)
+	recalculate_ui()
 
-func recalculate_text() -> void:
+func recalculate_ui() -> void:
 	$TextureButton/Text.text = format_string % [button_text, cost]
+	_on_feather_change(GameCounter.score, GameCounter.totalFeathersAccumulated)
 
 # Listen for total feathers
 func _on_feather_change(current_feathers: int, lifetime_feathers: int) -> void:
@@ -37,4 +37,3 @@ func _on_texture_button_pressed() -> void:
 # overrided class is to 
 func _register_next_upgrade() -> void:
 	parent_reference.remove_upgrade(self)
-	pass
