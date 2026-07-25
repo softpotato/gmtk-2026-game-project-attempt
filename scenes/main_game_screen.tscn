@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dchfk0ib6xtxf"]
 
 [ext_resource type="Script" uid="uid://cakpmwk1j1gr2" path="res://scripts/score_render.gd" id="1_mrvve"]
+[ext_resource type="Script" uid="uid://dp61mfsw6c64k" path="res://scripts/globals/wolf_spawner.gd" id="5_wolfs"]
 [ext_resource type="PackedScene" uid="uid://bw0u6ewol2n7f" path="res://templates/feather.tscn" id="2_oey37"]
 [ext_resource type="PackedScene" uid="uid://du2ic1ec2epc3" path="res://templates/upgrade_menu.tscn" id="3_oey37"]
 [ext_resource type="PackedScene" uid="uid://ch53hg0nmlim1" path="res://templates/upgrades/upgrade_button.tscn" id="4_b7bsw"]
@@ -83,3 +84,6 @@ offset_top = -184.125
 offset_right = 187.375
 offset_bottom = 184.125
 scale = Vector2(0.5, 0.5)
+
+[node name="WolfSpawner" type="Node" parent="UI Elements/Base Clicker Game" unique_id=881488088]
+script = ExtResource("5_wolfs")
