@@ -11,11 +11,18 @@ config_version=5
 [application]
 
 config/name="gmtk-project"
+run/main_scene="uid://dchfk0ib6xtxf"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameCounter="*uid://bmv4cn8jg1ebo"
+
 [display]
 
+window/size/viewport_width=1280
+window/size/viewport_height=720
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 

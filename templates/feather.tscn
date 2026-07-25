@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bw0u6ewol2n7f"]
+
+[ext_resource type="Script" uid="uid://d43d5shaptto" path="res://templates/feather.gd" id="1_tko5y"]
+[ext_resource type="Texture2D" uid="uid://ct4iibcfwijk6" path="res://assets/feather.png" id="2_w62gi"]
+
+[node name="Feather" type="Area2D" unique_id=299275338]
+script = ExtResource("1_tko5y")
+metadata/_edit_group_ = true
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1906784335]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("2_w62gi")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
