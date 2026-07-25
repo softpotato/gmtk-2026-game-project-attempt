@@ -8,9 +8,10 @@ var totalFeathersAccumulated: int = 0;
 
 func add_score(amount: int):
 	score += amount
+	totalFeathersAccumulated += amount
 	print("Current Score:", score)
 	
-	emit_signal("score_changed", score)
+	emit_signal("score_changed", score, totalFeathersAccumulated)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

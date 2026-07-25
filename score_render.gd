@@ -7,7 +7,7 @@ func _ready() -> void:
 	
 	text = "Score: " + str(GameCounter.score)
 
-func _on_score_changed(new_score: int):
+func _on_score_changed(new_score: int, _total_score: int):
 	text = "Score: " + str(new_score)
 
 

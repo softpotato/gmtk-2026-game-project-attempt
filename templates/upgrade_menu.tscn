@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://du2ic1ec2epc3"]
 
-[ext_resource type="Texture2D" uid="uid://d0bbe2l5qjxn5" path="res://assets/button_base.png" id="1_5h8yo"]
 [ext_resource type="Script" uid="uid://cxu1bc580v8ha" path="res://templates/upgrade_menu.gd" id="1_46jkk"]
+[ext_resource type="PackedScene" uid="uid://i17v80uet5ue" path="res://templates/upgrades/grandma_duck_button.tscn" id="2_46jkk"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_s1fef"]
 font_size = 24
@@ -33,19 +33,12 @@ grow_vertical = 2
 layout_mode = 2
 
 [node name="Label" type="Label" parent="ScrollContainer/VBoxContainer" unique_id=1480893023]
+custom_minimum_size = Vector2(256, 0)
+custom_maximum_size = Vector2(256, -1)
 layout_mode = 2
 text = "Shop"
 label_settings = SubResource("LabelSettings_s1fef")
 horizontal_alignment = 1
 
-[node name="DummyOption1" type="TextureButton" parent="ScrollContainer/VBoxContainer" unique_id=1405372144]
+[node name="GrandmaDuckButton" parent="ScrollContainer/VBoxContainer" unique_id=929680627 instance=ExtResource("2_46jkk")]
 layout_mode = 2
-texture_normal = ExtResource("1_5h8yo")
-
-[node name="DummyOption2" type="TextureButton" parent="ScrollContainer/VBoxContainer" unique_id=1989481167]
-layout_mode = 2
-texture_normal = ExtResource("1_5h8yo")
-
-[node name="DummyOption3" type="TextureButton" parent="ScrollContainer/VBoxContainer" unique_id=528925457]
-layout_mode = 2
-texture_normal = ExtResource("1_5h8yo")
