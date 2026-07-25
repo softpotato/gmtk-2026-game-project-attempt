@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 GameCounter="*uid://bmv4cn8jg1ebo"
 GeneratorUpgrades="*uid://difen62354t4e"
 SceneLoader="*uid://4iwvjiopv2f1"
+GlobalUpgrades="*uid://rjw4xgl1xrnv"
 
 [display]
 

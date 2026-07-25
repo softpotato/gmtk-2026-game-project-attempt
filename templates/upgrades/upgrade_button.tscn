@@ -1,12 +1,12 @@
-[gd_scene format=3 uid="uid://hnt7p3ewe7od"]
+[gd_scene format=3 uid="uid://ch53hg0nmlim1"]
 
-[ext_resource type="Script" uid="uid://2vkgw4jtuti" path="res://scripts/ui/linear_upgrade_button.gd" id="1_vspth"]
-[ext_resource type="Texture2D" uid="uid://d0bbe2l5qjxn5" path="res://assets/button_base.png" id="2_gogkk"]
+[ext_resource type="Texture2D" uid="uid://d0bbe2l5qjxn5" path="res://assets/button_base.png" id="1_qgjts"]
+[ext_resource type="Script" uid="uid://bwyennq32rxid" path="res://scripts/ui/upgrade_button.gd" id="1_ykiy3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ykiy3"]
 font_color = Color(0.3635184, 0.18816546, 0.18230435, 1)
 
-[node name="LinearUpgradeButton" type="Control" unique_id=1585705334]
+[node name="UpgradeButton" type="Control" unique_id=1585705334]
 custom_minimum_size = Vector2(256, 32)
 layout_mode = 3
 anchor_left = 0.49600002
@@ -18,7 +18,7 @@ offset_right = 0.39990234
 offset_bottom = -0.4000244
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_vspth")
+script = ExtResource("1_ykiy3")
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=1774292502]
 layout_mode = 1
@@ -26,9 +26,7 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = 0.30499268
-grow_horizontal = 2
-grow_vertical = 2
-texture_normal = ExtResource("2_gogkk")
+texture_normal = ExtResource("1_qgjts")
 
 [node name="Text" type="Label" parent="TextureButton" unique_id=1252346249]
 layout_mode = 1
@@ -39,8 +37,6 @@ offset_left = 3.0
 offset_top = 4.0
 offset_right = -4.0
 offset_bottom = -5.0
-grow_horizontal = 2
-grow_vertical = 2
 label_settings = SubResource("LabelSettings_ykiy3")
 horizontal_alignment = 1
 vertical_alignment = 1

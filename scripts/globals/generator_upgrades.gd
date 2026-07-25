@@ -1,5 +1,8 @@
 extends Node
 
+# WARNING: POTENTIALLY DEPRECATING THIS CLASS. WILL REMOVE 
+# IN A FEW PUSHES IN FAVOR OF GENERIC global_upgrades.gd
+
 var generator_count: Array[int] = [0, 0, 0]
 var generator_algorithm: Array[String] = ["linear", "logarithmic", "logarithmic"]
 

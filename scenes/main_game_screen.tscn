@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://cakpmwk1j1gr2" path="res://scripts/score_render.gd" id="1_mrvve"]
 [ext_resource type="PackedScene" uid="uid://bw0u6ewol2n7f" path="res://templates/feather.tscn" id="2_oey37"]
 [ext_resource type="PackedScene" uid="uid://du2ic1ec2epc3" path="res://templates/upgrade_menu.tscn" id="3_oey37"]
+[ext_resource type="PackedScene" uid="uid://ch53hg0nmlim1" path="res://templates/upgrades/upgrade_button.tscn" id="4_b7bsw"]
+[ext_resource type="PackedScene" uid="uid://hnt7p3ewe7od" path="res://templates/upgrades/linear_upgrade_button.tscn" id="4_u5j62"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_s1fef"]
 font_size = 48
@@ -39,5 +41,36 @@ offset_top = 100.0
 offset_right = 100.0
 offset_bottom = 820.0
 
-[node name="UpgradeMenu" parent="UI Elements/Base Clicker Game" unique_id=1722700651 instance=ExtResource("3_oey37")]
+[node name="UpgradeMenu" parent="UI Elements/Base Clicker Game" unique_id=1722700651 node_paths=PackedStringArray("locked_upgrades") instance=ExtResource("3_oey37")]
 layout_mode = 1
+locked_upgrades = [NodePath("UpgradeOptions/BuyGun"), NodePath("UpgradeOptions/BuyGrandmaDuck"), NodePath("UpgradeOptions/AscentionBook")]
+
+[node name="UpgradeOptions" type="Control" parent="UI Elements/Base Clicker Game/UpgradeMenu" unique_id=1710829293]
+visible = false
+anchors_preset = 0
+offset_left = -981.0
+offset_right = -941.0
+offset_bottom = 40.0
+
+[node name="AscentionBook" parent="UI Elements/Base Clicker Game/UpgradeMenu/UpgradeOptions" unique_id=1585705334 node_paths=PackedStringArray("parent_reference") instance=ExtResource("4_b7bsw")]
+layout_mode = 1
+parent_reference = NodePath("../..")
+upgrade_id = "ascention"
+button_text = "Ascention Book"
+cost = 1000
+render_cost = 50
+
+[node name="BuyGun" parent="UI Elements/Base Clicker Game/UpgradeMenu/UpgradeOptions" unique_id=685374457 node_paths=PackedStringArray("parent_reference") instance=ExtResource("4_b7bsw")]
+layout_mode = 1
+parent_reference = NodePath("../..")
+upgrade_id = "buy-gun"
+button_text = "Gun"
+cost = 100
+render_cost = 10
+
+[node name="BuyGrandmaDuck" parent="UI Elements/Base Clicker Game/UpgradeMenu/UpgradeOptions" unique_id=43472951 node_paths=PackedStringArray("parent_reference") instance=ExtResource("4_u5j62")]
+layout_mode = 1
+parent_reference = NodePath("../..")
+upgrade_id = "grandma-duck"
+button_text = "Grandma Duck"
+cost = 10
