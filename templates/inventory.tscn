@@ -1,7 +1,21 @@
 [gd_scene format=3 uid="uid://d2rchbowi0u1l"]
 
-[ext_resource type="Texture2D" uid="uid://dqudxg38gtwve" path="res://assets/inventory_icons/grandma_duck.png" id="1_2frq5"]
-[ext_resource type="Texture2D" uid="uid://cu0cetjs1bwk6" path="res://assets/inventory_icons/scissors.png" id="2_a2pyj"]
+[ext_resource type="PackedScene" uid="uid://jjgcqfuwpn3h" path="res://templates/inventory/item.tscn" id="1_ckcsb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qsuaf"]
+bg_color = Color(0.5072252, 0.160936, 0.1634649, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s1fef"]
+bg_color = Color(0.002671539, 0.002671539, 0.002671539, 0.30588236)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [node name="Inventory" type="Control" unique_id=595575020]
 layout_mode = 3
@@ -14,7 +28,32 @@ offset_right = -358.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ItemList" type="ItemList" parent="." unique_id=395173772]
+[node name="Panel" type="Panel" parent="." unique_id=1460057920]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qsuaf")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=226593646]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Panel" type="Panel" parent="Panel/MarginContainer" unique_id=1239605207]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s1fef")
+
+[node name="GridContainer" type="GridContainer" parent="Panel/MarginContainer/Panel" unique_id=18627545]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,20 +61,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="ItemList" unique_id=2067845648]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.12900001
-anchor_bottom = 0.16700001
-offset_right = -23.855003
-offset_bottom = -23.961002
-texture = ExtResource("1_2frq5")
+[node name="Item2" parent="Panel/MarginContainer/Panel/GridContainer" unique_id=1721695053 instance=ExtResource("1_ckcsb")]
+layout_mode = 2
 
-[node name="TextureRect2" type="TextureRect" parent="ItemList" unique_id=1740230339]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.12900001
-anchor_bottom = 0.16700001
-offset_right = -23.855003
-offset_bottom = -23.961002
-texture = ExtResource("2_a2pyj")
+[node name="Item" parent="Panel/MarginContainer/Panel/GridContainer" unique_id=1678799179 instance=ExtResource("1_ckcsb")]
+layout_mode = 2
+
+[node name="Item3" parent="Panel/MarginContainer/Panel/GridContainer" unique_id=1476184582 instance=ExtResource("1_ckcsb")]
+layout_mode = 2

@@ -24,7 +24,7 @@ func _check_locked_upgrades(current_feathers: int, feathers_lifetime: int) -> vo
 		func(upgrade): 
 			if upgrade.render_cost <= current_feathers:
 				unlocked_upgrades.append(upgrade)
-				upgrade.reparent($ScrollContainer/VBoxContainer)
+				upgrade.reparent($MarginContainer/ScrollContainer/VBoxContainer)
 				return false
 			return true
 	)
@@ -37,7 +37,7 @@ func remove_upgrade(buttonToRemove: UpgradeButton) -> void:
 	unlocked_upgrades.filter(func (upgrade: UpgradeButton) -> bool:
 			return upgrade != buttonToRemove
 	)
-	$ScrollContainer/VBoxContainer.remove_child(buttonToRemove)
+	$MarginContainer/ScrollContainer/VBoxContainer.remove_child(buttonToRemove)
 	purchased_upgrades.append(buttonToRemove)
 
 # This callback method is primarily for registering the next upgrade once

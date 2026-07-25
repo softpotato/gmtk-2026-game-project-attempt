@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ch53hg0nmlim1" path="res://templates/upgrades/upgrade_button.tscn" id="4_b7bsw"]
 [ext_resource type="PackedScene" uid="uid://hnt7p3ewe7od" path="res://templates/upgrades/linear_upgrade_button.tscn" id="4_u5j62"]
 [ext_resource type="PackedScene" uid="uid://bbouae4l6v8xj" path="res://scenes/duck.tscn" id="6_rai2x"]
+[ext_resource type="PackedScene" uid="uid://d2rchbowi0u1l" path="res://templates/inventory.tscn" id="7_ga1r2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_s1fef"]
 font_size = 48
@@ -78,8 +79,11 @@ cost = 10
 
 [node name="Duck" parent="UI Elements/Base Clicker Game" unique_id=1072704950 instance=ExtResource("6_rai2x")]
 layout_mode = 1
-offset_left = -187.375
-offset_top = -184.125
-offset_right = 187.375
-offset_bottom = 184.125
+offset_left = -183.0
+offset_top = -398.0
+offset_right = 191.75
+offset_bottom = -29.75
 scale = Vector2(0.5, 0.5)
+
+[node name="Inventory" parent="UI Elements/Base Clicker Game" unique_id=595575020 instance=ExtResource("7_ga1r2")]
+layout_mode = 1
