@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://du2ic1ec2epc3"]
 
 [ext_resource type="Script" uid="uid://cxu1bc580v8ha" path="res://scripts/ui/upgrade_menu.gd" id="1_46jkk"]
-[ext_resource type="PackedScene" uid="uid://hnt7p3ewe7od" path="res://templates/upgrades/linear_upgrade_button.tscn" id="2_46jkk"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_s1fef"]
 font_size = 24
@@ -16,45 +15,34 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_46jkk")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1853021500]
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -271.0
+[node name="Label" type="Label" parent="." unique_id=1480893023]
+custom_minimum_size = Vector2(256, 0)
+custom_maximum_size = Vector2(256, -1)
+layout_mode = 0
+offset_left = 28.0
 offset_top = 18.0
-offset_right = -15.0
-offset_bottom = -17.0
+offset_right = 284.0
+offset_bottom = 52.0
+text = "Shop"
+label_settings = SubResource("LabelSettings_s1fef")
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1853021500]
+clip_contents = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.094000004
+anchor_top = 0.096
+anchor_right = 0.95000005
+anchor_bottom = 0.9760001
+offset_left = -0.1060009
+offset_top = -0.12000275
+offset_right = -0.05001831
+offset_bottom = 0.27996826
 grow_horizontal = 0
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=276177451]
 layout_mode = 2
-
-[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer" unique_id=1480893023]
-custom_minimum_size = Vector2(256, 0)
-custom_maximum_size = Vector2(256, -1)
-layout_mode = 2
-text = "Shop"
-label_settings = SubResource("LabelSettings_s1fef")
-horizontal_alignment = 1
-
-[node name="LinearUpgradeButton" parent="ScrollContainer/VBoxContainer" unique_id=929680627 instance=ExtResource("2_46jkk")]
-layout_mode = 2
-generator_id = "grandma-duck"
-button_text = "Buy Grandma Duck"
-initial_reveal_threshold = 10
-
-[node name="LinearUpgradeButton2" parent="ScrollContainer/VBoxContainer" unique_id=1853818320 instance=ExtResource("2_46jkk")]
-layout_mode = 2
-generator_id = "slave-duck"
-button_text = "Buy Slave Duck"
-
-[node name="LinearUpgradeButton3" parent="ScrollContainer/VBoxContainer" unique_id=1543332327 instance=ExtResource("2_46jkk")]
-layout_mode = 2
-generator_id = "orphan-duck"
-button_text = "Buy Orphan Duck"
-initial_reveal_threshold = 50
-current_cost = 50
-increment_per_upgrade = 25
+size_flags_horizontal = 3
+size_flags_vertical = 3
