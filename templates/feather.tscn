@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bw0u6ewol2n7f"]
 
-[ext_resource type="Script" uid="uid://cgrjngs7qyxia" path="res://templates/feather.gd" id="1_tko5y"]
-[ext_resource type="Texture2D" uid="uid://ct4iibcfwijk6" path="res://assets/feather.png" id="2_w62gi"]
+[ext_resource type="Script" uid="uid://cgrjngs7qyxia" path="res://scripts/feather.gd" id="1_tko5y"]
+[ext_resource type="Texture2D" uid="uid://c8tjdnqyqjoce" path="res://assets/feather.png" id="2_w62gi"]
 
 [node name="Feather" type="Control" unique_id=1813634561]
 layout_mode = 3

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="gmtk-project"
-run/main_scene="uid://dchfk0ib6xtxf"
+run/main_scene="uid://banq6k8w1jsmw"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 GameCounter="*uid://bmv4cn8jg1ebo"
 GeneratorUpgrades="*uid://difen62354t4e"
+SceneLoader="*uid://4iwvjiopv2f1"
 
 [display]
 
