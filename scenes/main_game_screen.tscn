@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cakpmwk1j1gr2" path="res://scripts/score_render.gd" id="1_mrvve"]
 [ext_resource type="PackedScene" uid="uid://bw0u6ewol2n7f" path="res://templates/feather.tscn" id="2_oey37"]
 [ext_resource type="PackedScene" uid="uid://du2ic1ec2epc3" path="res://templates/upgrade_menu.tscn" id="3_oey37"]
+[ext_resource type="PackedScene" uid="uid://bbouae4l6v8xj" path="res://scenes/duck.tscn" id="4_b7bsw"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_s1fef"]
 font_size = 48
@@ -41,3 +42,11 @@ offset_bottom = 820.0
 
 [node name="UpgradeMenu" parent="UI Elements/Base Clicker Game" unique_id=1722700651 instance=ExtResource("3_oey37")]
 layout_mode = 1
+
+[node name="Duck" parent="UI Elements/Base Clicker Game" unique_id=1072704950 instance=ExtResource("4_b7bsw")]
+layout_mode = 1
+offset_left = -195.5
+offset_top = -203.5
+offset_right = 195.5
+offset_bottom = 203.5
+scale = Vector2(0.5, 0.5)
