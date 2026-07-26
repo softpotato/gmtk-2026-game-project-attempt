@@ -6,10 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://dr8h7bdlugf7g" path="res://assets/background/spring ground.png" id="2_f4nd7"]
 [ext_resource type="PackedScene" uid="uid://bw0u6ewol2n7f" path="res://templates/feather.tscn" id="2_oey37"]
 [ext_resource type="Texture2D" uid="uid://c4e1yqxyrufot" path="res://assets/background/spring leaves 100_.png" id="3_5cewh"]
-[ext_resource type="PackedScene" uid="uid://du2ic1ec2epc3" path="res://templates/upgrade_menu.tscn" id="3_oey37"]
 [ext_resource type="PackedScene" uid="uid://bsqrww33ncnj" path="res://templates/weather.tscn" id="3_y1y2a"]
 [ext_resource type="PackedScene" uid="uid://ch53hg0nmlim1" path="res://templates/upgrades/upgrade_button.tscn" id="4_b7bsw"]
-[ext_resource type="PackedScene" uid="uid://hnt7p3ewe7od" path="res://templates/upgrades/linear_upgrade_button.tscn" id="4_u5j62"]
 [ext_resource type="Texture2D" uid="uid://d0wrsfu31en0j" path="res://assets/background/summer background.png" id="4_uq6p0"]
 [ext_resource type="Texture2D" uid="uid://cee7td3ewvcpf" path="res://assets/background/blank_foreground.png" id="5_rxu6r"]
 [ext_resource type="Script" uid="uid://dp61mfsw6c64k" path="res://scripts/wolf_spawner.gd" id="5_wolfs"]
@@ -18,12 +16,29 @@
 [ext_resource type="Texture2D" uid="uid://brqc4e1dp265k" path="res://assets/background/autumn leaves 60_.png" id="7_138vy"]
 [ext_resource type="PackedScene" uid="uid://b605t5k6ql3vj" path="res://templates/inventory.tscn" id="7_ga1r2"]
 [ext_resource type="Texture2D" uid="uid://dlfasgw11jcj2" path="res://assets/background/winter background.png" id="8_4l1bf"]
-[ext_resource type="Texture2D" uid="uid://b4jq1eshyprrk" path="res://assets/background/spring leaves 60_.png" id="13_5cewh"]
 [ext_resource type="Script" uid="uid://c1yxr8ejd6f1b" path="res://scripts/feather_spawner.gd" id="10_y1y2a"]
+[ext_resource type="Texture2D" uid="uid://b4jq1eshyprrk" path="res://assets/background/spring leaves 60_.png" id="13_5cewh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_s1fef"]
 font = ExtResource("1_i0yoi")
 font_size = 48
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s1fef"]
+bg_color = Color(0.5058824, 0.16078432, 0.16470589, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_khhxn"]
+font = ExtResource("1_i0yoi")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_khhxn"]
+bg_color = Color(0.003921569, 0.003921569, 0.003921569, 0.30588236)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [node name="Main Scene" type="Node2D" unique_id=2032188786]
 
@@ -86,32 +101,6 @@ offset_top = 100.0
 offset_right = 403.5
 offset_bottom = 388.0
 
-[node name="UpgradeMenu" parent="UI Elements/Base Clicker Game" unique_id=1722700651 instance=ExtResource("3_oey37")]
-layout_mode = 1
-
-[node name="UpgradeOptions" type="Control" parent="UI Elements/Base Clicker Game/UpgradeMenu" unique_id=1710829293]
-visible = false
-anchors_preset = 0
-offset_left = -981.0
-offset_right = -941.0
-offset_bottom = 40.0
-
-[node name="SpawnRate" parent="UI Elements/Base Clicker Game/UpgradeMenu/UpgradeOptions" unique_id=1585705334 instance=ExtResource("4_b7bsw")]
-layout_mode = 1
-upgrade_id = "spawn_rate"
-
-[node name="FeatherValue" parent="UI Elements/Base Clicker Game/UpgradeMenu/UpgradeOptions" unique_id=685374457 instance=ExtResource("4_b7bsw")]
-layout_mode = 1
-upgrade_id = "feather_value"
-
-[node name="GoldenChance" parent="UI Elements/Base Clicker Game/UpgradeMenu/UpgradeOptions" unique_id=1005321315 instance=ExtResource("4_b7bsw")]
-layout_mode = 1
-upgrade_id = "golden_chance"
-
-[node name="Scavenging" parent="UI Elements/Base Clicker Game/UpgradeMenu/UpgradeOptions" unique_id=1801896722 instance=ExtResource("4_b7bsw")]
-layout_mode = 1
-upgrade_id = "scavenging"
-
 [node name="Duck" parent="UI Elements/Base Clicker Game" unique_id=1072704950 instance=ExtResource("6_rai2x")]
 layout_mode = 1
 anchors_preset = 15
@@ -132,6 +121,95 @@ inventory_items = {
 "grandma-duck": NodePath("Options/GrandmaDuckIcon")
 }
 
+[node name="FeatherSpawner" type="Node" parent="UI Elements/Base Clicker Game" unique_id=2036122291]
+script = ExtResource("10_y1y2a")
+
+[node name="UpgradeSidePanel" type="Control" parent="UI Elements/Base Clicker Game" unique_id=270425149]
+custom_minimum_size = Vector2(300, 720)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="UI Elements/Base Clicker Game/UpgradeSidePanel" unique_id=1125907017]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s1fef")
+
+[node name="Label" type="Label" parent="UI Elements/Base Clicker Game/UpgradeSidePanel/Panel" unique_id=1783541541]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Duck Store"
+label_settings = SubResource("LabelSettings_khhxn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="UI Elements/Base Clicker Game/UpgradeSidePanel/Panel" unique_id=1998706371]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Panel" type="Panel" parent="UI Elements/Base Clicker Game/UpgradeSidePanel/Panel/MarginContainer" unique_id=36636816]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_khhxn")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI Elements/Base Clicker Game/UpgradeSidePanel/Panel/MarginContainer/Panel" unique_id=889746732]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI Elements/Base Clicker Game/UpgradeSidePanel/Panel/MarginContainer/Panel/MarginContainer" unique_id=1373212577]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="SpawnRate" parent="UI Elements/Base Clicker Game/UpgradeSidePanel/Panel/MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=1585705334 instance=ExtResource("4_b7bsw")]
+layout_mode = 2
+upgrade_id = "spawn_rate"
+
+[node name="FeatherValue" parent="UI Elements/Base Clicker Game/UpgradeSidePanel/Panel/MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=685374457 instance=ExtResource("4_b7bsw")]
+layout_mode = 2
+upgrade_id = "feather_value"
+
+[node name="GoldenChance" parent="UI Elements/Base Clicker Game/UpgradeSidePanel/Panel/MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=1005321315 instance=ExtResource("4_b7bsw")]
+layout_mode = 2
+upgrade_id = "golden_chance"
+
+[node name="Scavenging" parent="UI Elements/Base Clicker Game/UpgradeSidePanel/Panel/MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=1801896722 instance=ExtResource("4_b7bsw")]
+layout_mode = 2
+upgrade_id = "scavenging"
+
 [node name="Foreground" type="TextureRect" parent="." unique_id=223983653]
 anchors_preset = 15
 anchor_right = 1.0
@@ -143,5 +221,3 @@ grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("13_5cewh")
 expand_mode = 2
-[node name="FeatherSpawner" type="Node" parent="UI Elements/Base Clicker Game" unique_id=2036122291]
-script = ExtResource("10_y1y2a")
