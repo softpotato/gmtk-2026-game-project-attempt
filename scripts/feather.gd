@@ -13,7 +13,7 @@ func _ready() -> void:
 	self.rotation_degrees = randf_range(0, 360)
 
 func _on_button_pressed() -> void:
-	GameCounter.add_score(1)
+	GameCounter.add_score(1 + GlobalUpgrades.get_level("feather_value"))
 	self.queue_free()
 
 func _on_button_down() -> void:

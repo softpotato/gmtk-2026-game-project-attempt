@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://du2ic1ec2epc3"]
 
-[ext_resource type="Script" uid="uid://cxu1bc580v8ha" path="res://scripts/ui/upgrade_menu.gd" id="1_46jkk"]
 [ext_resource type="FontFile" uid="uid://kjq1nt3damxx" path="res://assets/Montserrat-VariableFont_wght.ttf" id="2_46jkk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s1fef"]
@@ -22,7 +21,6 @@ anchor_bottom = 1.0
 offset_left = 981.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_46jkk")
 
 [node name="Panel" type="Panel" parent="." unique_id=289156738]
 layout_mode = 1
