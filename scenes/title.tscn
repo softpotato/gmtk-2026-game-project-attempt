@@ -54,19 +54,22 @@ theme_override_colors/font_color = Color(0, 1, 0.3372549, 1)
 theme_override_font_sizes/font_size = 21
 text = "Collect as many 
 feathers as you 
-can! "
+can! Click them
+to add to your count!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="How 2 play 2" type="Label" parent="CanvasLayer" unique_id=1866559864]
 offset_left = 824.0
 offset_top = 506.99997
-offset_right = 980.0
+offset_right = 1059.7756
 offset_bottom = 655.0
 rotation = 0.13264503
 theme_override_colors/font_color = Color(0.96151835, 4.4520943e-06, 9.62615e-07, 1)
 theme_override_font_sizes/font_size = 22
 text = "Watch out 
-for the wolves!"
+for the wolves!
+Click to shoo 
+them away!"
 horizontal_alignment = 1
 vertical_alignment = 1

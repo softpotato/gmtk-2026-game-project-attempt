@@ -44,7 +44,7 @@ func _on_steal_timer_timeout() -> void:
 		print(name, " saw there were no feathers and didn't steal any")
 		return
 
-	GameCounter.subtract_score(1)
+	GameCounter.subtract_score(1 + (SeasonsCycle.season_count * 4))
 	print(name, " stole a feather")
 
 # logic for a wolf being clicked on, taking damage, and eventually dying
