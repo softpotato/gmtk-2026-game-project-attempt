@@ -85,10 +85,8 @@ offset_top = 100.0
 offset_right = 403.5
 offset_bottom = 388.0
 
-[node name="UpgradeMenu" parent="UI Elements/Base Clicker Game" unique_id=1722700651 node_paths=PackedStringArray("locked_upgrades") instance=ExtResource("3_oey37")]
-visible = false
+[node name="UpgradeMenu" parent="UI Elements/Base Clicker Game" unique_id=1722700651 instance=ExtResource("3_oey37")]
 layout_mode = 1
-locked_upgrades = [NodePath("UpgradeOptions/AscentionBook"), NodePath("UpgradeOptions/BuyGun"), NodePath("UpgradeOptions/BuyGrandmaDuck")]
 
 [node name="UpgradeOptions" type="Control" parent="UI Elements/Base Clicker Game/UpgradeMenu" unique_id=1710829293]
 visible = false
@@ -97,28 +95,21 @@ offset_left = -981.0
 offset_right = -941.0
 offset_bottom = 40.0
 
-[node name="AscentionBook" parent="UI Elements/Base Clicker Game/UpgradeMenu/UpgradeOptions" unique_id=1585705334 node_paths=PackedStringArray("parent_reference") instance=ExtResource("4_b7bsw")]
+[node name="SpawnRate" parent="UI Elements/Base Clicker Game/UpgradeMenu/UpgradeOptions" unique_id=1585705334 instance=ExtResource("4_b7bsw")]
 layout_mode = 1
-parent_reference = NodePath("../..")
-upgrade_id = "ascention"
-button_text = "Ascention Book"
-cost = 1000
-render_cost = 50
+upgrade_id = "spawn_rate"
 
-[node name="BuyGun" parent="UI Elements/Base Clicker Game/UpgradeMenu/UpgradeOptions" unique_id=685374457 node_paths=PackedStringArray("parent_reference") instance=ExtResource("4_b7bsw")]
+[node name="FeatherValue" parent="UI Elements/Base Clicker Game/UpgradeMenu/UpgradeOptions" unique_id=685374457 instance=ExtResource("4_b7bsw")]
 layout_mode = 1
-parent_reference = NodePath("../..")
-upgrade_id = "buy-gun"
-button_text = "Gun"
-cost = 10000
-render_cost = 1000
+upgrade_id = "feather_value"
 
-[node name="BuyGrandmaDuck" parent="UI Elements/Base Clicker Game/UpgradeMenu/UpgradeOptions" unique_id=43472951 node_paths=PackedStringArray("parent_reference") instance=ExtResource("4_u5j62")]
+[node name="GoldenChance" parent="UI Elements/Base Clicker Game/UpgradeMenu/UpgradeOptions" unique_id=1005321315 instance=ExtResource("4_b7bsw")]
 layout_mode = 1
-parent_reference = NodePath("../..")
-upgrade_id = "grandma-duck"
-button_text = "Grandma Duck"
-cost = 10
+upgrade_id = "golden_chance"
+
+[node name="Scavenging" parent="UI Elements/Base Clicker Game/UpgradeMenu/UpgradeOptions" unique_id=1801896722 instance=ExtResource("4_b7bsw")]
+layout_mode = 1
+upgrade_id = "scavenging"
 
 [node name="Duck" parent="UI Elements/Base Clicker Game" unique_id=1072704950 instance=ExtResource("6_rai2x")]
 layout_mode = 1
