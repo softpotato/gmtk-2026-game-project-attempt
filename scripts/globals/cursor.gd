@@ -1,6 +1,7 @@
 extends Node
 
 @export var pet_cursor = preload("res://assets/hand cursor petting smolest.png")
+@export var petting_cursor = preload("res://assets/hand cursor petting smolest down.png")
 @export var default_cursor = preload("res://assets/hand cursor open smolest.png")
 @export var click_cursor = preload("res://assets/hand cursor closed smolest.png")
 

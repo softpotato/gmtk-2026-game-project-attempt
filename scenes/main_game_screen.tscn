@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://b605t5k6ql3vj" path="res://templates/inventory.tscn" id="7_ga1r2"]
 [ext_resource type="Texture2D" uid="uid://dlfasgw11jcj2" path="res://assets/background/winter background.png" id="8_4l1bf"]
 [ext_resource type="Texture2D" uid="uid://b4jq1eshyprrk" path="res://assets/background/spring leaves 60_.png" id="13_5cewh"]
+[ext_resource type="Script" uid="uid://c1yxr8ejd6f1b" path="res://scripts/feather_spawner.gd" id="10_y1y2a"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_s1fef"]
 font = ExtResource("1_i0yoi")
@@ -142,3 +143,5 @@ grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("13_5cewh")
 expand_mode = 2
+[node name="FeatherSpawner" type="Node" parent="UI Elements/Base Clicker Game" unique_id=2036122291]
+script = ExtResource("10_y1y2a")

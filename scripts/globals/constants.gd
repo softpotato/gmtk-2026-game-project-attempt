@@ -5,3 +5,4 @@ extends Node
 # spawner can learn about the number of wolves currently present
 # whenever it wants
 const WOLVES_GROUP_NAME = "wolves"
+const FEATHERS_GROUP_NAME = "feathers"

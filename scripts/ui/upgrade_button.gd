@@ -10,6 +10,7 @@ func _ready() -> void:
 	_update_state(GameCounter.score, GameCounter.totalFeathersAccumulated)
 	play_button.button_down.connect(_on_button_down)
 	play_button.button_up.connect(_on_button_up)
+	play_button.focus_mode = Control.FOCUS_NONE
 
 func _update_text() -> void:
 	$TextureButton/Text.text = GlobalUpgrades.get_cost_label(upgrade_id)
