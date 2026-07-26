@@ -2,8 +2,10 @@
 
 [ext_resource type="Script" uid="uid://2vkgw4jtuti" path="res://scripts/ui/linear_upgrade_button.gd" id="1_vspth"]
 [ext_resource type="Texture2D" uid="uid://d0bbe2l5qjxn5" path="res://assets/button_base.png" id="2_gogkk"]
+[ext_resource type="FontFile" uid="uid://kjq1nt3damxx" path="res://assets/Montserrat-VariableFont_wght.ttf" id="3_gogkk"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ykiy3"]
+font = ExtResource("3_gogkk")
 font_color = Color(0.3635184, 0.18816546, 0.18230435, 1)
 
 [node name="LinearUpgradeButton" type="Control" unique_id=1585705334 node_paths=PackedStringArray("play_button")]
