@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://bc6gwaeuemflk"]
 
+[ext_resource type="Script" uid="uid://cup5b5grs6187" path="res://scripts/lose.gd" id="1_r6nsb"]
+[ext_resource type="AudioStream" uid="uid://d0tinchp2cnuw" path="res://assets/sounds/losing sound.mp3" id="2_10rtl"]
+
 [node name="Lose" type="Node" unique_id=1166763273]
+script = ExtResource("1_r6nsb")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1434428361]
 anchors_preset = 15
@@ -19,3 +23,6 @@ grow_vertical = 2
 text = "You froze to death..."
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Lose" type="AudioStreamPlayer2D" parent="." unique_id=1450017208]
+stream = ExtResource("2_10rtl")

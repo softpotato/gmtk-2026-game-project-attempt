@@ -14,9 +14,13 @@ func _on_progress_changed(new_value: float) -> void:
 	pass
 	
 func _on_load_finished() -> void:
-	animation_player.play("Introduction")
-	await animation_player.animation_finished
+	if !GameCounter.introPlayed:
+		GameCounter.introPlayed = true
+		animation_player.play("Introduction")
+		await animation_player.animation_finished
+
 	queue_free()
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
