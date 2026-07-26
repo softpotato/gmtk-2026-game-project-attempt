@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://du2ic1ec2epc3"]
 
-[ext_resource type="FontFile" uid="uid://kjq1nt3damxx" path="res://assets/Montserrat-VariableFont_wght.ttf" id="2_46jkk"]
+[ext_resource type="FontFile" uid="uid://byh7l5hfxkou" path="res://assets/Montserrat-Bold.ttf" id="1_5h8yo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s1fef"]
 bg_color = Color(0.5058824, 0.16078432, 0.16470589, 1)
@@ -10,7 +10,7 @@ corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
 [sub_resource type="LabelSettings" id="LabelSettings_s1fef"]
-font = ExtResource("2_46jkk")
+font = ExtResource("1_5h8yo")
 font_size = 24
 
 [node name="UpgradeMenu" type="Control" unique_id=1722700651]

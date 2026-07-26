@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c0loufhlep0ai"]
 
 [ext_resource type="Script" uid="uid://e4hqnj6oo07l" path="res://scripts/wolf.gd" id="1_rvogl"]
+[ext_resource type="Texture2D" uid="uid://bloep3087lgdw" path="res://assets/wolf.png" id="2_2hp13"]
 
 [node name="Wolf" type="Control" unique_id=802059218 node_paths=PackedStringArray("play_button")]
 custom_minimum_size = Vector2(40, 40)
@@ -12,12 +13,14 @@ script = ExtResource("1_rvogl")
 play_button = NodePath("TextureButton")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1829125380]
+visible = false
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Label" type="Label" parent="." unique_id=108895321]
+visible = false
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 0
 offset_right = 40.0
@@ -29,8 +32,19 @@ vertical_alignment = 1
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=1793513144]
 custom_minimum_size = Vector2(40, 40)
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -86.000015
+offset_top = -124.000015
+offset_right = 390.0
+offset_bottom = 554.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("2_2hp13")
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_button_pressed"]

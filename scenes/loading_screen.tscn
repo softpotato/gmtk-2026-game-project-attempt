@@ -6,12 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://cjldmghdpl4by" path="res://assets/cutscene/intro duckscene 3.png" id="4_pu4a1"]
 [ext_resource type="Texture2D" uid="uid://rvqwaxevre48" path="res://assets/cutscene/intro duckscene 4.png" id="5_if62a"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_46brc"]
-bg_color = Color(0, 0, 0, 1)
-
 [sub_resource type="Animation" id="Animation_djmwj"]
 resource_name = "Introduction"
-length = 4.5
+length = 10.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -19,8 +16,8 @@ tracks/0/path = NodePath("Panel:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 4, 4.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.5, 9.5, 10),
+"transitions": PackedFloat32Array(1.0283717, 1.000001, 0.9999997, 0.96593744),
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(1, 1, 1, 0), Color(0.09312981, 0.09312981, 0.09312981, 0), Color(0, 0, 0, 1)]
 }
@@ -31,10 +28,10 @@ tracks/1/path = NodePath("slide1:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.5, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [true, false]
+"values": [false, true, false]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -43,7 +40,7 @@ tracks/2/path = NodePath("slide2:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 1.5, 2.5),
+"times": PackedFloat32Array(0, 2.5, 4.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, false]
@@ -55,7 +52,7 @@ tracks/3/path = NodePath("slide3:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 2.5, 3.5),
+"times": PackedFloat32Array(0, 4.5, 6.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, false]
@@ -67,10 +64,10 @@ tracks/4/path = NodePath("slide4:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 3.5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 6.5, 9.5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [false, true]
+"values": [false, true, false]
 }
 
 [sub_resource type="Animation" id="Animation_ndlxt"]
@@ -86,6 +83,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("slide4:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_ep5rh"]
@@ -111,41 +120,26 @@ _data = {
 &"transition": SubResource("Animation_ep5rh")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_46brc"]
+bg_color = Color(0, 0, 0, 1)
+
 [node name="LoadingScreen" type="CanvasLayer" unique_id=316070295 node_paths=PackedStringArray("animation_player")]
 layer = 10
 script = ExtResource("1_ep5rh")
 animation_player = NodePath("AnimationPlayer")
 
-[node name="Panel" type="Panel" parent="." unique_id=103459892]
-modulate = Color(1, 1, 1, 0)
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_46brc")
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=207214743]
 libraries/ = SubResource("AnimationLibrary_hprjd")
 autoplay = &"transition"
 
-[node name="slide1" type="TextureRect" parent="." unique_id=117545468]
+[node name="slide4" type="TextureRect" parent="." unique_id=1910532947]
 visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_djmwj")
-
-[node name="slide2" type="TextureRect" parent="." unique_id=631421306]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_qygbf")
+texture = ExtResource("5_if62a")
 
 [node name="slide3" type="TextureRect" parent="." unique_id=993153100]
 visible = false
@@ -156,10 +150,29 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_pu4a1")
 
-[node name="slide4" type="TextureRect" parent="." unique_id=1910532947]
+[node name="slide2" type="TextureRect" parent="." unique_id=631421306]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("5_if62a")
+texture = ExtResource("3_qygbf")
+
+[node name="slide1" type="TextureRect" parent="." unique_id=117545468]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_djmwj")
+
+[node name="Panel" type="Panel" parent="." unique_id=103459892]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_46brc")

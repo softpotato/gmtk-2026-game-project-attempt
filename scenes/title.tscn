@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://banq6k8w1jsmw"]
 
 [ext_resource type="Script" uid="uid://2e6nabftbfw7" path="res://scripts/title.gd" id="1_4ignj"]
+[ext_resource type="Texture2D" uid="uid://bau3hex8vl3so" path="res://assets/logo.png" id="2_wosw1"]
+[ext_resource type="FontFile" uid="uid://byh7l5hfxkou" path="res://assets/Montserrat-Bold.ttf" id="3_p6dhs"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_s1fef"]
+font = ExtResource("3_p6dhs")
 
 [node name="Title" type="Node2D" unique_id=914462126 node_paths=PackedStringArray("play_button")]
 script = ExtResource("1_4ignj")
@@ -8,6 +13,11 @@ initial_scene = &"uid://dchfk0ib6xtxf"
 play_button = NodePath("CanvasLayer/Button")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=930027630]
+follow_viewport_enabled = true
+
+[node name="Logo" type="Sprite2D" parent="CanvasLayer" unique_id=63502724]
+position = Vector2(644, 283)
+texture = ExtResource("2_wosw1")
 
 [node name="Button" type="Button" parent="CanvasLayer" unique_id=1325486632]
 anchors_preset = 8
@@ -15,11 +25,21 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -50.0
-offset_right = 50.0
-offset_bottom = 50.0
+offset_left = -95.0
+offset_top = 220.0
+offset_right = 98.0
+offset_bottom = 287.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 text = "Start"
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1617947911]
+offset_left = 6.0
+offset_top = 655.0
+offset_right = 1272.0
+offset_bottom = 717.0
+text = "Made in Collaboration by: Brandon, Diego, Ivy, Dennis, Leo, Max, and Benjamin"
+label_settings = SubResource("LabelSettings_s1fef")
+horizontal_alignment = 1
+vertical_alignment = 1
