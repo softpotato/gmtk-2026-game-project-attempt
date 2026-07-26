@@ -7,7 +7,7 @@ func _ready() -> void:
 	play_button.button_up.connect(_on_button_up)
 
 func _on_button_pressed() -> void:
-	GameCounter.add_score(1)
+	GameCounter.add_score(1 + GlobalUpgrades.get_level("feather_value"))
 
 func _on_button_down() -> void:
 	Input.set_custom_mouse_cursor(Cursor.click_cursor, Input.CURSOR_IBEAM, Vector2(35, 35))
