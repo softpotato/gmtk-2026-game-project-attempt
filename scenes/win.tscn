@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://c0648gxmk5xek"]
 
+[ext_resource type="Script" uid="uid://cutf2xh0xuqna" path="res://scripts/win.gd" id="1_826fv"]
+[ext_resource type="AudioStream" uid="uid://c7ggfc0o6ihf" path="res://assets/sounds/bell run.mp3" id="2_iiocm"]
+
 [node name="Win" type="Node" unique_id=76062023]
+script = ExtResource("1_826fv")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1898269809]
 anchors_preset = 15
@@ -8,7 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+color = Color(0.83137256, 0.3254902, 0.12156863, 1)
 
 [node name="Label" type="Label" parent="." unique_id=194047433]
 anchors_preset = 15
@@ -16,6 +20,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "You lived a good life..."
+text = "You lived a good life! Yippee!"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Winner" type="AudioStreamPlayer2D" parent="." unique_id=1816394574]
+stream = ExtResource("2_iiocm")

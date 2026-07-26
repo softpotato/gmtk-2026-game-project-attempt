@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://du2ic1ec2epc3" path="res://templates/upgrade_menu.tscn" id="3_oey37"]
 [ext_resource type="PackedScene" uid="uid://bsqrww33ncnj" path="res://templates/weather.tscn" id="3_y1y2a"]
 [ext_resource type="PackedScene" uid="uid://ch53hg0nmlim1" path="res://templates/upgrades/upgrade_button.tscn" id="4_b7bsw"]
-[ext_resource type="PackedScene" uid="uid://hnt7p3ewe7od" path="res://templates/upgrades/linear_upgrade_button.tscn" id="4_u5j62"]
 [ext_resource type="Texture2D" uid="uid://d0wrsfu31en0j" path="res://assets/background/summer background.png" id="4_uq6p0"]
 [ext_resource type="Texture2D" uid="uid://cee7td3ewvcpf" path="res://assets/background/blank_foreground.png" id="5_rxu6r"]
 [ext_resource type="Script" uid="uid://dp61mfsw6c64k" path="res://scripts/wolf_spawner.gd" id="5_wolfs"]
@@ -18,8 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://brqc4e1dp265k" path="res://assets/background/autumn leaves 60_.png" id="7_138vy"]
 [ext_resource type="PackedScene" uid="uid://b605t5k6ql3vj" path="res://templates/inventory.tscn" id="7_ga1r2"]
 [ext_resource type="Texture2D" uid="uid://dlfasgw11jcj2" path="res://assets/background/winter background.png" id="8_4l1bf"]
-[ext_resource type="Texture2D" uid="uid://b4jq1eshyprrk" path="res://assets/background/spring leaves 60_.png" id="13_5cewh"]
 [ext_resource type="Script" uid="uid://c1yxr8ejd6f1b" path="res://scripts/feather_spawner.gd" id="10_y1y2a"]
+[ext_resource type="Texture2D" uid="uid://b4jq1eshyprrk" path="res://assets/background/spring leaves 60_.png" id="13_5cewh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_s1fef"]
 font = ExtResource("1_i0yoi")
@@ -132,6 +131,9 @@ inventory_items = {
 "grandma-duck": NodePath("Options/GrandmaDuckIcon")
 }
 
+[node name="FeatherSpawner" type="Node" parent="UI Elements/Base Clicker Game" unique_id=2036122291]
+script = ExtResource("10_y1y2a")
+
 [node name="Foreground" type="TextureRect" parent="." unique_id=223983653]
 anchors_preset = 15
 anchor_right = 1.0
@@ -143,5 +145,3 @@ grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("13_5cewh")
 expand_mode = 2
-[node name="FeatherSpawner" type="Node" parent="UI Elements/Base Clicker Game" unique_id=2036122291]
-script = ExtResource("10_y1y2a")
