@@ -18,6 +18,8 @@
 [ext_resource type="Texture2D" uid="uid://dlfasgw11jcj2" path="res://assets/background/winter background.png" id="8_4l1bf"]
 [ext_resource type="Script" uid="uid://c1yxr8ejd6f1b" path="res://scripts/feather_spawner.gd" id="10_y1y2a"]
 [ext_resource type="Texture2D" uid="uid://b4jq1eshyprrk" path="res://assets/background/spring leaves 60_.png" id="13_5cewh"]
+[ext_resource type="Script" uid="uid://egowb0wd0plj" path="res://scripts/upgrade_side_panel.gd" id="17_uq6p0"]
+[ext_resource type="Texture2D" uid="uid://ct68xipdclp7g" path="res://assets/ui/panel_toggle.png" id="19_rxu6r"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_s1fef"]
 font = ExtResource("1_i0yoi")
@@ -39,6 +41,11 @@ corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qsuaf"]
+bg_color = Color(0.5058824, 0.16078432, 0.16470589, 1)
+corner_radius_top_left = 10
+corner_radius_bottom_left = 10
 
 [node name="Main Scene" type="Node2D" unique_id=2032188786]
 
@@ -62,6 +69,7 @@ fall_background = ExtResource("6_8ey5x")
 fall_foreground = ExtResource("7_138vy")
 winter_background = ExtResource("8_4l1bf")
 winter_foreground = ExtResource("5_rxu6r")
+metadata/_edit_lock_ = true
 
 [node name="UI Elements" type="CanvasLayer" parent="." unique_id=997321275]
 
@@ -117,14 +125,18 @@ script = ExtResource("5_wolfs")
 [node name="Inventory" parent="UI Elements/Base Clicker Game" unique_id=595575020 node_paths=PackedStringArray("inventory_items") instance=ExtResource("7_ga1r2")]
 layout_mode = 1
 inventory_items = {
-"buy-gun": NodePath("Options/GunIcon"),
-"grandma-duck": NodePath("Options/GrandmaDuckIcon")
+"buy-gun": null,
+"feather_value": NodePath("Options/Stonks"),
+"golden_chance": NodePath("Options/Midas"),
+"grandma-duck": null,
+"scavenging": NodePath("Options/Magnet"),
+"spawn_rate": NodePath("Options/Downpour")
 }
 
 [node name="FeatherSpawner" type="Node" parent="UI Elements/Base Clicker Game" unique_id=2036122291]
 script = ExtResource("10_y1y2a")
 
-[node name="UpgradeSidePanel" type="Control" parent="UI Elements/Base Clicker Game" unique_id=270425149]
+[node name="UpgradeSidePanel" type="Control" parent="UI Elements/Base Clicker Game" unique_id=270425149 node_paths=PackedStringArray("expand_button", "collapse_button")]
 custom_minimum_size = Vector2(300, 720)
 layout_mode = 1
 anchors_preset = 6
@@ -132,11 +144,14 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -40.0
-offset_top = -20.0
-offset_bottom = 20.0
+offset_left = -300.0
+offset_top = -360.0
+offset_bottom = 360.0
 grow_horizontal = 0
 grow_vertical = 2
+script = ExtResource("17_uq6p0")
+expand_button = NodePath("Panel/Panel/Expand")
+collapse_button = NodePath("Panel/Panel/Collapse")
 
 [node name="Panel" type="Panel" parent="UI Elements/Base Clicker Game/UpgradeSidePanel" unique_id=1125907017]
 layout_mode = 1
@@ -210,6 +225,45 @@ upgrade_id = "golden_chance"
 layout_mode = 2
 upgrade_id = "scavenging"
 
+[node name="Panel" type="Panel" parent="UI Elements/Base Clicker Game/UpgradeSidePanel/Panel" unique_id=1739397491]
+custom_minimum_size = Vector2(60, 100)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -53.39
+offset_top = -50.0
+offset_right = 6.6100006
+offset_bottom = 50.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qsuaf")
+
+[node name="Expand" type="TextureButton" parent="UI Elements/Base Clicker Game/UpgradeSidePanel/Panel/Panel" unique_id=1318873636]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = -0.555
+offset_top = 96.07
+offset_right = 186.85501
+offset_bottom = 107.07001
+grow_vertical = 2
+rotation = -1.5707964
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("19_rxu6r")
+
+[node name="Collapse" type="TextureButton" parent="UI Elements/Base Clicker Game/UpgradeSidePanel/Panel/Panel" unique_id=1800505635]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 53.345
+offset_top = 2.37
+offset_right = 240.755
+offset_bottom = 13.370018
+grow_vertical = 2
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("19_rxu6r")
+
 [node name="Foreground" type="TextureRect" parent="." unique_id=223983653]
 anchors_preset = 15
 anchor_right = 1.0
@@ -221,3 +275,6 @@ grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("13_5cewh")
 expand_mode = 2
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="UI Elements/Base Clicker Game/UpgradeSidePanel/Panel/Panel/Expand" to="UI Elements/Base Clicker Game/UpgradeSidePanel" method="_on_texture_button_pressed"]

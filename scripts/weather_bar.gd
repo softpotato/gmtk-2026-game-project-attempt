@@ -24,12 +24,16 @@ func _process(delta: float) -> void:
 		match current_season:
 			Weather.SPRING:
 				current_season = Weather.SUMMER
+				$Label.text = format_string % ["Fall"]
 			Weather.SUMMER:
 				current_season = Weather.FALL
+				$Label.text = format_string % ["Winter"]
 			Weather.FALL:
 				current_season = Weather.WINTER
+				$Label.text = format_string % ["Spring"]
 			Weather.WINTER:
 				current_season = Weather.SPRING
+				$Label.text = format_string % ["Summer"]
 		
 		SeasonsCycle.set_season(current_season)
-		$Label.text = format_string % [current_season]
+		
