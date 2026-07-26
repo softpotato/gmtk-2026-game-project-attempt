@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://b605t5k6ql3vj"]
+
+[ext_resource type="Texture2D" uid="uid://dqudxg38gtwve" path="res://assets/inventory_icons/grandma_duck.png" id="1_2frq5"]
+[ext_resource type="PackedScene" uid="uid://cmpp1kh5ioj8g" path="res://templates/inventory/item_icon.tscn" id="1_a2pyj"]
+[ext_resource type="Script" uid="uid://el0rm0k3rxrk" path="res://scripts/inventory.gd" id="1_ckcsb"]
+[ext_resource type="Texture2D" uid="uid://ct68xipdclp7g" path="res://assets/ui/panel_toggle.png" id="2_opjcu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qsuaf"]
+bg_color = Color(0.5058824, 0.16078432, 0.16470589, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s1fef"]
+bg_color = Color(0.002671539, 0.002671539, 0.002671539, 0.30588236)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_khhxn"]
+bg_color = Color(0.5058824, 0.16078432, 0.16470589, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+
+[node name="Inventory" type="Control" unique_id=595575020 node_paths=PackedStringArray("inventory_items")]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_right = 100.0
+offset_bottom = 500.0
+grow_vertical = 0
+script = ExtResource("1_ckcsb")
+inventory_items = {
+"buy-gun": NodePath("Options/GunIcon"),
+"grandma-duck": NodePath("Options/GrandmaDuckIcon")
+}
+
+[node name="Panel" type="Panel" parent="." unique_id=1460057920]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qsuaf")
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=226593646]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Panel" type="Panel" parent="Panel/MarginContainer" unique_id=1239605207]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s1fef")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/MarginContainer/Panel" unique_id=1858329966]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="GridContainer" type="GridContainer" parent="Panel/MarginContainer/Panel/MarginContainer" unique_id=18627545]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+
+[node name="TogglePanel" type="Panel" parent="." unique_id=1796792254]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -38.0
+offset_top = -34.375
+offset_right = 37.0
+offset_bottom = 5.625
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_khhxn")
+
+[node name="TextureButton" type="TextureButton" parent="TogglePanel" unique_id=1475162330]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -37.5
+offset_top = 0.375
+offset_right = 262.5
+offset_bottom = 136.375
+grow_horizontal = 2
+scale = Vector2(0.25, 0.25)
+texture_normal = ExtResource("2_opjcu")
+stretch_mode = 3
+
+[node name="Options" type="Control" parent="." unique_id=1592799540]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GrandmaDuckIcon" parent="Options" unique_id=306296906 instance=ExtResource("1_a2pyj")]
+layout_mode = 0
+anchors_preset = 0
+texture = ExtResource("1_2frq5")
+
+[node name="GunIcon" parent="Options" unique_id=1537723128 instance=ExtResource("1_a2pyj")]
+layout_mode = 0
+anchors_preset = 0
+
+[connection signal="pressed" from="TogglePanel/TextureButton" to="." method="_on_texture_button_pressed"]
