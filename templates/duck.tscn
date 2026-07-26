@@ -4,6 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://dqapro32x00j3" path="res://assets/duck base.png" id="2_ccrsp"]
 [ext_resource type="Texture2D" uid="uid://bry8i18ajcs6u" path="res://assets/duck quack.png" id="3_dll6g"]
 [ext_resource type="AudioStream" uid="uid://cjytyud4hu27i" path="res://assets/sounds/fakeduck2.mp3" id="4_kls7j"]
+[ext_resource type="Texture2D" uid="uid://c1q1qn1mnbyn6" path="res://assets/hats/baseball cap back.png" id="5_yqr8l"]
+[ext_resource type="Texture2D" uid="uid://b3co22d1wvgci" path="res://assets/hats/baseball cap front.png" id="6_mgoiq"]
+[ext_resource type="Texture2D" uid="uid://bjrxv2tb26vck" path="res://assets/hats/beanie back.png" id="7_nsw3n"]
+[ext_resource type="Texture2D" uid="uid://cbwrwif5qpua8" path="res://assets/hats/beanie front.png" id="8_eyoml"]
+[ext_resource type="Texture2D" uid="uid://dhwa7ik88vx0e" path="res://assets/hats/bow.png" id="9_yj8uc"]
+[ext_resource type="Texture2D" uid="uid://c5lk2yobujnp2" path="res://assets/hats/leaf.png" id="10_fnh4v"]
+[ext_resource type="Texture2D" uid="uid://bx112enobo847" path="res://assets/hats/long top hat.png" id="11_qrjrl"]
+[ext_resource type="Texture2D" uid="uid://dgje3lxikehmw" path="res://assets/hats/wizard back.png" id="12_e4i6x"]
+[ext_resource type="Texture2D" uid="uid://c3b6rx6jdck05" path="res://assets/hats/wizard front.png" id="13_dptqp"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ojlhk"]
 animations = [{
@@ -59,6 +68,63 @@ offset_bottom = -0.06100464
 offset_transform_enabled = true
 offset_transform_position_ratio = Vector2(1, 0)
 mouse_default_cursor_shape = 2
+
+[node name="basecapback" type="Sprite2D" parent="." unique_id=1791158011]
+visible = false
+z_index = -1
+position = Vector2(141, 66)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_yqr8l")
+
+[node name="basecapfront" type="Sprite2D" parent="." unique_id=1875966114]
+visible = false
+position = Vector2(138, 75)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_mgoiq")
+
+[node name="beanback" type="Sprite2D" parent="." unique_id=1661234467]
+visible = false
+z_index = -1
+position = Vector2(147, 62)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_nsw3n")
+
+[node name="beanfront" type="Sprite2D" parent="." unique_id=1649951515]
+visible = false
+position = Vector2(144, 63)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_eyoml")
+
+[node name="bow" type="Sprite2D" parent="." unique_id=19695363]
+visible = false
+position = Vector2(145, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_yj8uc")
+
+[node name="leaf" type="Sprite2D" parent="." unique_id=1804172033]
+visible = false
+position = Vector2(125, 40)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_fnh4v")
+
+[node name="tophat" type="Sprite2D" parent="." unique_id=2120764367]
+visible = false
+position = Vector2(130, -616)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_qrjrl")
+
+[node name="wizback" type="Sprite2D" parent="." unique_id=318895843]
+visible = false
+z_index = -1
+position = Vector2(146, 30)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("12_e4i6x")
+
+[node name="wizfront" type="Sprite2D" parent="." unique_id=1894815352]
+visible = false
+position = Vector2(146, 31)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_dptqp")
 
 [connection signal="mouse_entered" from="TextureButton" to="." method="_on_texture_button_mouse_entered"]
 [connection signal="mouse_exited" from="TextureButton" to="." method="_on_texture_button_mouse_exited"]
