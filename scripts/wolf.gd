@@ -1,5 +1,8 @@
 extends Control
 
+@onready var wolf_intro_sound: AudioStreamPlayer2D = $Awoo
+@onready var wolf_death_sound: AudioStreamPlayer2D = $Bleh
+
 @export var play_button: TextureButton
 
 # the interval at which an individual wolf takes a feather away
@@ -15,6 +18,7 @@ func _ready() -> void:
 	# add to group to tag it for easy identification
 	# as a wolf on the screen
 	add_to_group(Constants.WOLVES_GROUP_NAME)
+	wolf_intro_sound.play()
 
 	# set the timer for wolf to passively steal feathers
 	steal_timer = Timer.new()
@@ -27,6 +31,8 @@ func _ready() -> void:
 	play_button.button_down.connect(_on_button_down)
 	play_button.button_up.connect(_on_button_up)
 	play_button.focus_mode = Control.FOCUS_NONE
+	
+	wolf_death_sound.finished.connect(_on_bleh_finished)
 
 	print(name, " readied")
 
@@ -43,15 +49,22 @@ func _on_steal_timer_timeout() -> void:
 
 # logic for a wolf being clicked on, taking damage, and eventually dying
 func _on_button_pressed() -> void:
+	if(health < 1):
+		return
+	
 	health -= 1
 	if health <= 0:
+		wolf_death_sound.play()
 		# removes the wolf from the scene and also
 		# from the "wolves" group that's used to
 		# identify wolf elements in the scene
-		self.queue_free()
+		#self.queue_free()
 		
 func _on_button_down() -> void:
 	Input.set_custom_mouse_cursor(Cursor.click_cursor, Input.CURSOR_IBEAM, Vector2(35, 35))
 
 func _on_button_up() -> void:
 	Input.set_custom_mouse_cursor(Cursor.default_cursor, Input.CURSOR_ARROW, Vector2(35, 35))
+	
+func _on_bleh_finished() -> void:
+	self.queue_free() 
