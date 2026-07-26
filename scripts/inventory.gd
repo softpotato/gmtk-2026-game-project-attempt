@@ -12,4 +12,3 @@ func _on_texture_button_pressed() -> void:
 		position.y = 720
 		
 	expanded = !expanded
-	position.rotated(PI / 2)

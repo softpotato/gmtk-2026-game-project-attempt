@@ -20,6 +20,8 @@ func set_season(season: WeatherBar.Weather):
 	self.season = season
 	season_count += 1
 	
+	check_for_winter(GameCounter.score, GameCounter.totalFeathersAccumulated)
+	
 	if season_count >= end_season:
 		SceneLoader.load_scene(win_scene)
 		
