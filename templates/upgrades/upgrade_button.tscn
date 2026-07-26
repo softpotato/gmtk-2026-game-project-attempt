@@ -3,27 +3,37 @@
 [ext_resource type="Texture2D" uid="uid://d0bbe2l5qjxn5" path="res://assets/button_base.png" id="1_qgjts"]
 [ext_resource type="Script" uid="uid://bwyennq32rxid" path="res://scripts/ui/upgrade_button.gd" id="1_ykiy3"]
 [ext_resource type="FontFile" uid="uid://kjq1nt3damxx" path="res://assets/Montserrat-VariableFont_wght.ttf" id="3_ahh21"]
+[ext_resource type="FontFile" uid="uid://byh7l5hfxkou" path="res://assets/Montserrat-Bold.ttf" id="4_suw5y"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ykiy3"]
 font = ExtResource("3_ahh21")
 font_color = Color(0.3635184, 0.18816546, 0.18230435, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f4nd7"]
+bg_color = Color(0.94509804, 0.87058824, 0.76862746, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [node name="UpgradeButton" type="Control" unique_id=1585705334 node_paths=PackedStringArray("play_button")]
-custom_minimum_size = Vector2(256, 32)
+custom_minimum_size = Vector2(160, 30)
 layout_mode = 3
 anchor_left = 0.49600002
 anchor_top = 0.5
-anchor_right = 0.69500005
-anchor_bottom = 0.545
+anchor_right = 0.62
+anchor_bottom = 0.541
 offset_left = -0.5750122
-offset_right = 0.39990234
-offset_bottom = -0.4000244
+offset_right = 1.4000244
+offset_bottom = 0.47998047
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
 script = ExtResource("1_ykiy3")
-play_button = NodePath("TextureButton")
+play_button = NodePath("Button")
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=1774292502]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -48,4 +58,15 @@ label_settings = SubResource("LabelSettings_ykiy3")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[node name="Button" type="Button" parent="." unique_id=11053883]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 30.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_suw5y")
+theme_override_styles/normal = SubResource("StyleBoxFlat_f4nd7")
+text = "Test Text"
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
