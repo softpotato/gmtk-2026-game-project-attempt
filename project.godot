@@ -21,6 +21,7 @@ GameCounter="*uid://bmv4cn8jg1ebo"
 GeneratorUpgrades="*uid://difen62354t4e"
 SceneLoader="*uid://4iwvjiopv2f1"
 GlobalUpgrades="*uid://rjw4xgl1xrnv"
+Cursor="*uid://ckxbumhx6f1w4"
 
 [display]
 
@@ -29,6 +30,8 @@ window/size/viewport_height=720
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 window/stretch/scale_mode="integer"
+mouse_cursor/custom_image="uid://x6iup25bebpx"
+mouse_cursor/custom_image_hotspot=Vector2(65, 65)
 
 [editor]
 
