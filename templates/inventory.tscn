@@ -1,4 +1,8 @@
-[gd_scene format=3 uid="uid://d2rchbowi0u1l"]
+[gd_scene format=3 uid="uid://b605t5k6ql3vj"]
+
+[ext_resource type="Texture2D" uid="uid://dqudxg38gtwve" path="res://assets/inventory_icons/grandma_duck.png" id="1_2frq5"]
+[ext_resource type="PackedScene" uid="uid://cmpp1kh5ioj8g" path="res://templates/inventory/item_icon.tscn" id="1_a2pyj"]
+[ext_resource type="Script" uid="uid://el0rm0k3rxrk" path="res://scripts/inventory.gd" id="1_ckcsb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qsuaf"]
 bg_color = Color(0.5072252, 0.160936, 0.1634649, 1)
@@ -15,7 +19,7 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[node name="Inventory" type="Control" unique_id=595575020]
+[node name="Inventory" type="Control" unique_id=595575020 node_paths=PackedStringArray("inventory_items")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -25,6 +29,11 @@ offset_top = 337.0
 offset_right = -358.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ckcsb")
+inventory_items = {
+"buy-gun": NodePath("Options/GunIcon"),
+"grandma-duck": NodePath("Options/GrandmaDuckIcon")
+}
 
 [node name="Panel" type="Panel" parent="." unique_id=1460057920]
 layout_mode = 1
@@ -34,6 +43,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_qsuaf")
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=226593646]
 layout_mode = 1
@@ -51,11 +62,35 @@ theme_override_constants/margin_bottom = 20
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_s1fef")
 
-[node name="GridContainer" type="GridContainer" parent="Panel/MarginContainer/Panel" unique_id=18627545]
+[node name="MarginContainer" type="MarginContainer" parent="Panel/MarginContainer/Panel" unique_id=1858329966]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-columns = 5
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="GridContainer" type="GridContainer" parent="Panel/MarginContainer/Panel/MarginContainer" unique_id=18627545]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 6
+
+[node name="Options" type="Control" parent="." unique_id=1592799540]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GrandmaDuckIcon" parent="Options" unique_id=306296906 instance=ExtResource("1_a2pyj")]
+layout_mode = 0
+anchors_preset = 0
+texture = ExtResource("1_2frq5")
+
+[node name="GunIcon" parent="Options" unique_id=1537723128 instance=ExtResource("1_a2pyj")]
+layout_mode = 0
+anchors_preset = 0

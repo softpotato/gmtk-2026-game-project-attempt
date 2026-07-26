@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ch53hg0nmlim1" path="res://templates/upgrades/upgrade_button.tscn" id="4_b7bsw"]
 [ext_resource type="PackedScene" uid="uid://hnt7p3ewe7od" path="res://templates/upgrades/linear_upgrade_button.tscn" id="4_u5j62"]
 [ext_resource type="PackedScene" uid="uid://bbouae4l6v8xj" path="res://scenes/duck.tscn" id="6_rai2x"]
-[ext_resource type="PackedScene" uid="uid://d2rchbowi0u1l" path="res://templates/inventory.tscn" id="7_ga1r2"]
+[ext_resource type="PackedScene" uid="uid://b605t5k6ql3vj" path="res://templates/inventory.tscn" id="7_ga1r2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_s1fef"]
 font_size = 48
@@ -67,8 +67,8 @@ layout_mode = 1
 parent_reference = NodePath("../..")
 upgrade_id = "buy-gun"
 button_text = "Gun"
-cost = 100
-render_cost = 10
+cost = 10000
+render_cost = 1000
 
 [node name="BuyGrandmaDuck" parent="UI Elements/Base Clicker Game/UpgradeMenu/UpgradeOptions" unique_id=43472951 node_paths=PackedStringArray("parent_reference") instance=ExtResource("4_u5j62")]
 layout_mode = 1
