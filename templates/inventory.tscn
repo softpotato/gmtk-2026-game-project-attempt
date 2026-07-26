@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://b605t5k6ql3vj"]
 
-[ext_resource type="Texture2D" uid="uid://dqudxg38gtwve" path="res://assets/inventory_icons/grandma_duck.png" id="1_2frq5"]
 [ext_resource type="PackedScene" uid="uid://cmpp1kh5ioj8g" path="res://templates/inventory/item_icon.tscn" id="1_a2pyj"]
 [ext_resource type="Script" uid="uid://el0rm0k3rxrk" path="res://scripts/inventory.gd" id="1_ckcsb"]
 [ext_resource type="Texture2D" uid="uid://ct68xipdclp7g" path="res://assets/ui/panel_toggle.png" id="2_opjcu"]
+[ext_resource type="Texture2D" uid="uid://btrtt1samqxbs" path="res://assets/inventory_icons/magnet.png" id="4_qe5xm"]
+[ext_resource type="Texture2D" uid="uid://25pptb2hlhjs" path="res://assets/inventory_icons/duck stonks.png" id="5_bel74"]
+[ext_resource type="Texture2D" uid="uid://dut0evpml7068" path="res://assets/inventory_icons/down pour.png" id="6_r2lr2"]
+[ext_resource type="Texture2D" uid="uid://c85lvoobweyda" path="res://assets/inventory_icons/duck of midas.png" id="7_xksva"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qsuaf"]
 bg_color = Color(0.5058824, 0.16078432, 0.16470589, 1)
@@ -35,8 +38,10 @@ offset_bottom = 500.0
 grow_vertical = 0
 script = ExtResource("1_ckcsb")
 inventory_items = {
-"buy-gun": NodePath("Options/GunIcon"),
-"grandma-duck": NodePath("Options/GrandmaDuckIcon")
+"feather_value": NodePath("Options/Stonks"),
+"golden_chance": NodePath("Options/Midas"),
+"scavenging": NodePath("Options/Magnet"),
+"spawn_rate": NodePath("Options/Downpour")
 }
 
 [node name="Panel" type="Panel" parent="." unique_id=1460057920]
@@ -115,13 +120,36 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="GrandmaDuckIcon" parent="Options" unique_id=306296906 instance=ExtResource("1_a2pyj")]
+[node name="Magnet" parent="Options" unique_id=306296906 instance=ExtResource("1_a2pyj")]
 layout_mode = 0
 anchors_preset = 0
-texture = ExtResource("1_2frq5")
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 1
+grow_vertical = 1
+texture = ExtResource("4_qe5xm")
 
-[node name="GunIcon" parent="Options" unique_id=1537723128 instance=ExtResource("1_a2pyj")]
+[node name="Stonks" parent="Options" unique_id=1537723128 instance=ExtResource("1_a2pyj")]
 layout_mode = 0
 anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 1
+grow_vertical = 1
+texture = ExtResource("5_bel74")
+
+[node name="Downpour" parent="Options" unique_id=1651375257 instance=ExtResource("1_a2pyj")]
+layout_mode = 0
+anchors_preset = 0
+texture = ExtResource("6_r2lr2")
+
+[node name="Midas" parent="Options" unique_id=414115460 instance=ExtResource("1_a2pyj")]
+layout_mode = 0
+anchors_preset = 0
+texture = ExtResource("7_xksva")
 
 [connection signal="pressed" from="TogglePanel/TextureButton" to="." method="_on_texture_button_pressed"]
