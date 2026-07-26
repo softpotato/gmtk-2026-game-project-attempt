@@ -8,7 +8,7 @@
 font = ExtResource("3_ahh21")
 font_color = Color(0.3635184, 0.18816546, 0.18230435, 1)
 
-[node name="UpgradeButton" type="Control" unique_id=1585705334]
+[node name="UpgradeButton" type="Control" unique_id=1585705334 node_paths=PackedStringArray("play_button")]
 custom_minimum_size = Vector2(256, 32)
 layout_mode = 3
 anchor_left = 0.49600002
@@ -21,6 +21,11 @@ offset_bottom = -0.4000244
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ykiy3")
+upgrade_id = null
+button_text = null
+cost = null
+render_cost = null
+play_button = NodePath("TextureButton")
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=1774292502]
 layout_mode = 1

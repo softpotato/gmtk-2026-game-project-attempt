@@ -2,13 +2,14 @@
 
 [ext_resource type="Script" uid="uid://e4hqnj6oo07l" path="res://scripts/wolf.gd" id="1_rvogl"]
 
-[node name="Wolf" type="Control" unique_id=802059218]
+[node name="Wolf" type="Control" unique_id=802059218 node_paths=PackedStringArray("play_button")]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_rvogl")
+play_button = NodePath("TextureButton")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1829125380]
 custom_minimum_size = Vector2(40, 40)

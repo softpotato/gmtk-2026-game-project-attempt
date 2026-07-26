@@ -5,10 +5,13 @@
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_thel1"]
 load_path = "res://.godot/imported/feather.png-e87ceca955fbfc150e23b2694f4bbdd1.ctex"
 
-[node name="Feather" type="Control" unique_id=1813634561]
+[node name="Feather" type="Control" unique_id=1813634561 node_paths=PackedStringArray("play_button")]
 layout_mode = 3
 anchors_preset = 0
+offset_right = 303.5
+offset_bottom = 288.0
 script = ExtResource("1_tko5y")
+play_button = NodePath("Button")
 metadata/_edit_group_ = true
 
 [node name="Button" type="TextureButton" parent="." unique_id=1209232514]
