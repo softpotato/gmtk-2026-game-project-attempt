@@ -3,10 +3,13 @@
 [ext_resource type="Script" uid="uid://cgrjngs7qyxia" path="res://scripts/feather.gd" id="1_tko5y"]
 [ext_resource type="Texture2D" uid="uid://c8tjdnqyqjoce" path="res://assets/feather.png" id="2_w62gi"]
 
-[node name="Feather" type="Control" unique_id=1813634561]
+[node name="Feather" type="Control" unique_id=1813634561 node_paths=PackedStringArray("play_button")]
 layout_mode = 3
 anchors_preset = 0
+offset_right = 303.5
+offset_bottom = 288.0
 script = ExtResource("1_tko5y")
+play_button = NodePath("Button")
 metadata/_edit_group_ = true
 
 [node name="Button" type="TextureButton" parent="." unique_id=1209232514]

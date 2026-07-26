@@ -57,6 +57,7 @@ offset_right = -0.028015137
 offset_bottom = -0.06100464
 offset_transform_enabled = true
 offset_transform_position_ratio = Vector2(1, 0)
+mouse_default_cursor_shape = 2
 
 [connection signal="mouse_entered" from="TextureButton" to="." method="_on_texture_button_mouse_entered"]
 [connection signal="mouse_exited" from="TextureButton" to="." method="_on_texture_button_mouse_exited"]

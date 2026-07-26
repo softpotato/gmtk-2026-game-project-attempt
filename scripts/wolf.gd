@@ -1,5 +1,7 @@
 extends Control
 
+@export var play_button: TextureButton
+
 # the interval at which an individual wolf takes a feather away
 const STEAL_INTERVAL: int = 5
 
@@ -21,6 +23,9 @@ func _ready() -> void:
 	steal_timer.timeout.connect(_on_steal_timer_timeout)
 	add_child(steal_timer)
 	steal_timer.start()
+	
+	play_button.button_down.connect(_on_button_down)
+	play_button.button_up.connect(_on_button_up)
 
 	print(name, " readied")
 
@@ -43,3 +48,9 @@ func _on_button_pressed() -> void:
 		# from the "wolves" group that's used to
 		# identify wolf elements in the scene
 		self.queue_free()
+		
+func _on_button_down() -> void:
+	Input.set_custom_mouse_cursor(Cursor.click_cursor, Input.CURSOR_IBEAM, Vector2(35, 35))
+
+func _on_button_up() -> void:
+	Input.set_custom_mouse_cursor(Cursor.default_cursor, Input.CURSOR_ARROW, Vector2(35, 35))
