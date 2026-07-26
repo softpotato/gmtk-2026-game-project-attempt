@@ -22,5 +22,7 @@ func set_season(season: WeatherBar.Weather):
 	
 	if season_count >= end_season:
 		SceneLoader.load_scene(win_scene)
+		
+	print("season: %s" % season)
 	
-	emit_signal("weather_change", self.season)
+	emit_signal("season_change", self.season)

@@ -1,21 +1,51 @@
 [gd_scene format=3 uid="uid://dchfk0ib6xtxf"]
 
 [ext_resource type="FontFile" uid="uid://byh7l5hfxkou" path="res://assets/Montserrat-Bold.ttf" id="1_i0yoi"]
+[ext_resource type="Script" uid="uid://bsbc6872n6i6v" path="res://scripts/season_background_foreground_setter.gd" id="1_ijmmn"]
 [ext_resource type="Script" uid="uid://cakpmwk1j1gr2" path="res://scripts/score_render.gd" id="1_mrvve"]
+[ext_resource type="Texture2D" uid="uid://dr8h7bdlugf7g" path="res://assets/background/spring ground.png" id="2_f4nd7"]
 [ext_resource type="PackedScene" uid="uid://bw0u6ewol2n7f" path="res://templates/feather.tscn" id="2_oey37"]
+[ext_resource type="Texture2D" uid="uid://c4e1yqxyrufot" path="res://assets/background/spring leaves 100_.png" id="3_5cewh"]
 [ext_resource type="PackedScene" uid="uid://du2ic1ec2epc3" path="res://templates/upgrade_menu.tscn" id="3_oey37"]
 [ext_resource type="PackedScene" uid="uid://bsqrww33ncnj" path="res://templates/weather.tscn" id="3_y1y2a"]
 [ext_resource type="PackedScene" uid="uid://ch53hg0nmlim1" path="res://templates/upgrades/upgrade_button.tscn" id="4_b7bsw"]
 [ext_resource type="PackedScene" uid="uid://hnt7p3ewe7od" path="res://templates/upgrades/linear_upgrade_button.tscn" id="4_u5j62"]
+[ext_resource type="Texture2D" uid="uid://d0wrsfu31en0j" path="res://assets/background/summer background.png" id="4_uq6p0"]
+[ext_resource type="Texture2D" uid="uid://cee7td3ewvcpf" path="res://assets/background/blank_foreground.png" id="5_rxu6r"]
 [ext_resource type="Script" uid="uid://dp61mfsw6c64k" path="res://scripts/wolf_spawner.gd" id="5_wolfs"]
+[ext_resource type="Texture2D" uid="uid://cls6d3cr8ncd0" path="res://assets/background/autumn ground.png" id="6_8ey5x"]
 [ext_resource type="PackedScene" uid="uid://bbouae4l6v8xj" path="res://templates/duck.tscn" id="6_rai2x"]
+[ext_resource type="Texture2D" uid="uid://brqc4e1dp265k" path="res://assets/background/autumn leaves 60_.png" id="7_138vy"]
 [ext_resource type="PackedScene" uid="uid://b605t5k6ql3vj" path="res://templates/inventory.tscn" id="7_ga1r2"]
+[ext_resource type="Texture2D" uid="uid://dlfasgw11jcj2" path="res://assets/background/winter background.png" id="8_4l1bf"]
+[ext_resource type="Texture2D" uid="uid://b4jq1eshyprrk" path="res://assets/background/spring leaves 60_.png" id="13_5cewh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_s1fef"]
 font = ExtResource("1_i0yoi")
 font_size = 48
 
 [node name="Main Scene" type="Node2D" unique_id=2032188786]
+
+[node name="Background" type="TextureRect" parent="." unique_id=1918344763 node_paths=PackedStringArray("background", "foreground")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_f4nd7")
+script = ExtResource("1_ijmmn")
+background = NodePath(".")
+foreground = NodePath("../Foreground")
+spring_background = ExtResource("2_f4nd7")
+spring_foreground = ExtResource("3_5cewh")
+summer_background = ExtResource("4_uq6p0")
+summer_foreground = ExtResource("5_rxu6r")
+fall_background = ExtResource("6_8ey5x")
+fall_foreground = ExtResource("7_138vy")
+winter_background = ExtResource("8_4l1bf")
+winter_foreground = ExtResource("5_rxu6r")
 
 [node name="UI Elements" type="CanvasLayer" parent="." unique_id=997321275]
 
@@ -56,6 +86,7 @@ offset_right = 403.5
 offset_bottom = 388.0
 
 [node name="UpgradeMenu" parent="UI Elements/Base Clicker Game" unique_id=1722700651 node_paths=PackedStringArray("locked_upgrades") instance=ExtResource("3_oey37")]
+visible = false
 layout_mode = 1
 locked_upgrades = [NodePath("UpgradeOptions/AscentionBook"), NodePath("UpgradeOptions/BuyGun"), NodePath("UpgradeOptions/BuyGrandmaDuck")]
 
@@ -108,3 +139,13 @@ inventory_items = {
 "buy-gun": NodePath("Options/GunIcon"),
 "grandma-duck": NodePath("Options/GrandmaDuckIcon")
 }
+
+[node name="Foreground" type="TextureRect" parent="." unique_id=223983653]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_5cewh")
