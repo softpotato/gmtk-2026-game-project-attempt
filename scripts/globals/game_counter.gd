@@ -1,6 +1,6 @@
 extends Node
 
-signal score_changed(new_score)
+signal score_changed(new_score, totalAccumulatedFeathers)
 
 var score: int = 0
 var totalFeathersAccumulated: int = 0;

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bc6gwaeuemflk"]
+
+[node name="Lose" type="Node" unique_id=1166763273]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1434428361]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=118125780]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "You froze to death..."
+horizontal_alignment = 1
+vertical_alignment = 1
