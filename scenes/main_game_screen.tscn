@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://dlfasgw11jcj2" path="res://assets/background/winter background.png" id="8_4l1bf"]
 [ext_resource type="Script" uid="uid://c1yxr8ejd6f1b" path="res://scripts/feather_spawner.gd" id="10_y1y2a"]
 [ext_resource type="Texture2D" uid="uid://b4jq1eshyprrk" path="res://assets/background/spring leaves 60_.png" id="13_5cewh"]
+[ext_resource type="Script" uid="uid://clr7q0gxqhsvl" path="res://scripts/scavenger.gd" id="17_5cewh"]
 [ext_resource type="Script" uid="uid://egowb0wd0plj" path="res://scripts/upgrade_side_panel.gd" id="17_uq6p0"]
 [ext_resource type="Texture2D" uid="uid://ct68xipdclp7g" path="res://assets/ui/panel_toggle.png" id="19_rxu6r"]
 
@@ -137,18 +138,16 @@ inventory_items = {
 script = ExtResource("10_y1y2a")
 
 [node name="UpgradeSidePanel" type="Control" parent="UI Elements/Base Clicker Game" unique_id=270425149 node_paths=PackedStringArray("expand_button", "collapse_button")]
-custom_minimum_size = Vector2(300, 720)
 layout_mode = 1
-anchors_preset = 6
+anchors_preset = 3
 anchor_left = 1.0
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 1.0
-anchor_bottom = 0.5
+anchor_bottom = 1.0
 offset_left = -300.0
-offset_top = -360.0
-offset_bottom = 360.0
+offset_top = -720.0
 grow_horizontal = 0
-grow_vertical = 2
+grow_vertical = 0
 script = ExtResource("17_uq6p0")
 expand_button = NodePath("Panel/Panel/Expand")
 collapse_button = NodePath("Panel/Panel/Collapse")
@@ -200,10 +199,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI Elements/Base Clicker Game/UpgradeSidePanel/Panel/MarginContainer/Panel/MarginContainer" unique_id=1373212577]
 layout_mode = 2
@@ -211,18 +210,26 @@ theme_override_constants/separation = 10
 
 [node name="SpawnRate" parent="UI Elements/Base Clicker Game/UpgradeSidePanel/Panel/MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=1585705334 instance=ExtResource("4_b7bsw")]
 layout_mode = 2
+tooltip_text = "Increase spawn rate of feathers"
+mouse_filter = 1
 upgrade_id = "spawn_rate"
 
 [node name="FeatherValue" parent="UI Elements/Base Clicker Game/UpgradeSidePanel/Panel/MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=685374457 instance=ExtResource("4_b7bsw")]
 layout_mode = 2
+tooltip_text = "Increase feather value"
+mouse_filter = 1
 upgrade_id = "feather_value"
 
 [node name="GoldenChance" parent="UI Elements/Base Clicker Game/UpgradeSidePanel/Panel/MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=1005321315 instance=ExtResource("4_b7bsw")]
 layout_mode = 2
+tooltip_text = "Increases the chance of a golden feather appearing"
+mouse_filter = 1
 upgrade_id = "golden_chance"
 
 [node name="Scavenging" parent="UI Elements/Base Clicker Game/UpgradeSidePanel/Panel/MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=1801896722 instance=ExtResource("4_b7bsw")]
 layout_mode = 2
+tooltip_text = "Increases collection range of mouse pointer"
+mouse_filter = 1
 upgrade_id = "scavenging"
 
 [node name="Panel" type="Panel" parent="UI Elements/Base Clicker Game/UpgradeSidePanel/Panel" unique_id=1739397491]
@@ -263,6 +270,9 @@ grow_vertical = 2
 rotation = 1.5707964
 scale = Vector2(0.5, 0.5)
 texture_normal = ExtResource("19_rxu6r")
+
+[node name="Scavenger" type="Node" parent="UI Elements/Base Clicker Game" unique_id=426372822]
+script = ExtResource("17_5cewh")
 
 [node name="Foreground" type="TextureRect" parent="." unique_id=223983653]
 anchors_preset = 15
