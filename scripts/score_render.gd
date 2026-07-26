@@ -5,10 +5,10 @@ extends Label
 func _ready() -> void:
 	GameCounter.score_changed.connect(_on_score_changed)
 	
-	text = "Score: " + str(GameCounter.score)
+	text = "Feathers: " + str(GameCounter.score)
 
 func _on_score_changed(new_score: int, _total_score: int):
-	text = "Score: " + str(new_score)
+	text = "Feathers: " + str(new_score)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
