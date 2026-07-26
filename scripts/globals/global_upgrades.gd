@@ -27,6 +27,8 @@ signal spawn_rate_updated()
 
 signal scavenging_updated()
 
+signal upgrade_id_for_inventory(upgrade_id)
+
 var upgrade_levels: Dictionary[String, int] = {}
 
 func get_level(upgrade_id: String) -> int:
@@ -38,6 +40,8 @@ func buy_upgrade(upgrade_id: String) -> void:
 		emit_signal("spawn_rate_updated")
 	if upgrade_id == "scavenging":
 		emit_signal("scavenging_updated")
+		
+	emit_signal("upgrade_id_for_inventory", upgrade_id)
 
 func get_cost(upgrade_id: String) -> int:
 	var data = UPGRADE_DATA[upgrade_id]
