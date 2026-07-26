@@ -1,6 +1,7 @@
 extends Control
 
 @export var play_button: TextureButton
+@export var value := 1
 @onready var collect_feather: AudioStreamPlayer2D = $Pop
 
 func _ready() -> void:
@@ -16,7 +17,7 @@ func _ready() -> void:
 	collect_feather.finished.connect(_on_sound_finish)
 
 func _on_button_pressed() -> void:
-	GameCounter.add_score(1 + GlobalUpgrades.get_level("feather_value"))
+	GameCounter.add_score(value * (1 + GlobalUpgrades.get_level("feather_value")))
 	collect_feather.play()
 
 func _on_button_down() -> void:
