@@ -21,10 +21,6 @@ offset_bottom = -0.4000244
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ykiy3")
-upgrade_id = null
-button_text = null
-cost = null
-render_cost = null
 play_button = NodePath("TextureButton")
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=1774292502]

@@ -15,6 +15,7 @@ func _ready() -> void:
 	GameCounter.score_changed.connect(_on_feather_change)
 	play_button.button_down.connect(_on_button_down)
 	play_button.button_up.connect(_on_button_up)
+	play_button.focus_mode = Control.FOCUS_NONE
 	recalculate_ui()
 
 func recalculate_ui() -> void:

@@ -26,6 +26,7 @@ func _ready() -> void:
 	
 	play_button.button_down.connect(_on_button_down)
 	play_button.button_up.connect(_on_button_up)
+	play_button.focus_mode = Control.FOCUS_NONE
 
 	print(name, " readied")
 
