@@ -145,11 +145,23 @@ texture = ExtResource("5_bel74")
 [node name="Downpour" parent="Options" unique_id=1651375257 instance=ExtResource("1_a2pyj")]
 layout_mode = 0
 anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 1
+grow_vertical = 1
 texture = ExtResource("6_r2lr2")
 
 [node name="Midas" parent="Options" unique_id=414115460 instance=ExtResource("1_a2pyj")]
 layout_mode = 0
 anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 1
+grow_vertical = 1
 texture = ExtResource("7_xksva")
 
 [connection signal="pressed" from="TogglePanel/TextureButton" to="." method="_on_texture_button_pressed"]
