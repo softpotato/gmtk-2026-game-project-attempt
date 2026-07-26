@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://b4jq1eshyprrk" path="res://assets/background/spring leaves 60_.png" id="13_5cewh"]
 [ext_resource type="Script" uid="uid://egowb0wd0plj" path="res://scripts/upgrade_side_panel.gd" id="17_uq6p0"]
 [ext_resource type="Texture2D" uid="uid://ct68xipdclp7g" path="res://assets/ui/panel_toggle.png" id="19_rxu6r"]
+[ext_resource type="Script" uid="uid://clr7q0gxqhsvl" path="res://scripts/scavenger.gd" id="17_5cewh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_s1fef"]
 font = ExtResource("1_i0yoi")
@@ -137,6 +138,10 @@ inventory_items = {
 script = ExtResource("10_y1y2a")
 
 [node name="UpgradeSidePanel" type="Control" parent="UI Elements/Base Clicker Game" unique_id=270425149 node_paths=PackedStringArray("expand_button", "collapse_button")]
+[node name="Scavenger" type="Node" parent="UI Elements/Base Clicker Game" unique_id=426372822]
+script = ExtResource("17_5cewh")
+
+[node name="UpgradeSidePanel" type="Control" parent="UI Elements/Base Clicker Game" unique_id=270425149]
 custom_minimum_size = Vector2(300, 720)
 layout_mode = 1
 anchors_preset = 6

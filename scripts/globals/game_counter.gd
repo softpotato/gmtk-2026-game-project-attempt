@@ -6,7 +6,6 @@ var score: int = 0
 var totalFeathersAccumulated: int = 0;
 var introPlayed: bool = false;
 
-
 func add_score(amount: int):
 	score += amount
 	totalFeathersAccumulated += amount

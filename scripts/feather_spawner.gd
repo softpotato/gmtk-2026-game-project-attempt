@@ -16,6 +16,15 @@ const SPAWN_CHANCE_INTERVAL: float = 1.0
 # the probability of a feather spawning per spawn chance interval
 const SPAWN_PROBABILITY: float = 0.9
 
+# how much faster the spawn is with each spawn rate upgrade
+const SPAWN_RATE_MULTIPLIER: float = 0.92
+
+# chance to spawn a golden feather per upgrade level
+const GOLDEN_CHANCE_PER_LEVEL := 0.05
+
+# value of a golden feather
+const GOLDEN_VALUE := 10
+
 # the feather template to be instantiated when it's time to spawn a feather
 var feather_scene: PackedScene = preload("res://templates/feather.tscn")
 
@@ -24,13 +33,18 @@ var spawn_timer: Timer
 
 func _ready() -> void:
 	spawn_timer = Timer.new()
-	spawn_timer.wait_time = SPAWN_CHANCE_INTERVAL
 	spawn_timer.one_shot = false
 	spawn_timer.timeout.connect(_on_spawn_timer_timeout)
 	add_child(spawn_timer)
-	spawn_timer.start()
-
+	
+	GlobalUpgrades.spawn_rate_updated.connect(_update_spawn_rate)
+	_update_spawn_rate()
+	
 	print("feather spawner readied")
+	
+func _update_spawn_rate() -> void:
+	var level = GlobalUpgrades.get_level("spawn_rate")
+	spawn_timer.start(SPAWN_CHANCE_INTERVAL * pow(SPAWN_RATE_MULTIPLIER, level))
 
 func _on_spawn_timer_timeout() -> void:
 	# flip the biased coin
@@ -48,6 +62,13 @@ func spawn_feather() -> void:
 
 	# instantiate a feather from the feather template
 	var feather = feather_scene.instantiate()
+
+	# determine whether to spawn a golden feather
+	var chance = GOLDEN_CHANCE_PER_LEVEL * GlobalUpgrades.get_level("golden_chance")
+
+	if randf() < chance:
+		feather.value = GOLDEN_VALUE
+		feather.modulate = Color.GOLD
 
 	# the dimensions of the game screen itself
 	var viewport_size = get_viewport().get_visible_rect().size
