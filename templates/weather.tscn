@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://bsqrww33ncnj"]
 
 [ext_resource type="Script" uid="uid://gor3fsnr6gac" path="res://scripts/weather_bar.gd" id="1_w1nvx"]
-[ext_resource type="FontFile" uid="uid://kjq1nt3damxx" path="res://assets/Montserrat-VariableFont_wght.ttf" id="2_ft2vn"]
+[ext_resource type="FontFile" uid="uid://byh7l5hfxkou" path="res://assets/Montserrat-Bold.ttf" id="2_w1nvx"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_s1fef"]
-font = ExtResource("2_ft2vn")
+font = ExtResource("2_w1nvx")
+font_color = Color(0, 0, 0, 1)
 
 [node name="Weather" type="Control" unique_id=130523344]
 layout_mode = 3
