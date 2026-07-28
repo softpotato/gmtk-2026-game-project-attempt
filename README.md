@@ -10,7 +10,7 @@
 
 ## Overview
 
-*Ducky's Got Down* is a survival clicker gmae developed for the Game Makers Tool Kit (GMTK) 2026 game jam in a team of 7. Protect the duck, upgrade feather production, fend off hungry wolves, and survive winter.
+*Ducky's Got Down* is a survival clicker game developed for the Game Makers Tool Kit (GMTK) 2026 game jam in a team of 7. Protect the duck, upgrade feather production, fend off hungry wolves, and survive winter.
 
 ### :video_game: Core Mechanics
 - **Resource Management:**  Collect feathers to unlock new upgrades and improve your collection efficiency.
